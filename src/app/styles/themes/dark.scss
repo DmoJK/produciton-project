@@ -1,11 +1,11 @@
 .app.dark {
-    --bg-color: darkblue;
-    --inverted-bg-color: rgba(255, 235, 210, 0.655);
+  --bg-color: darkblue;
+  --inverted-bg-color: rgb(255 235 210 / 65.5%);
 
-    // --primary-color: darkcyan;
-    // --primary-color: rgb(0, 174, 174);
-    --primary-color: rgb(107, 213, 0);
-    --secondary-color: rgb(0, 174, 174);
-    --inverted-primary-color: rgb(76, 43, 0);
-    --inverted-secondary-color: burlywood;
+  // --primary-color: darkcyan;
+  // --primary-color: rgb(0, 174, 174);
+  --primary-color: rgb(107 213 0);
+  --secondary-color: rgb(0 174 174);
+  --inverted-primary-color: rgb(76 43 0);
+  --inverted-secondary-color: burlywood;
 }
