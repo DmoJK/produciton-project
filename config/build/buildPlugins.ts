@@ -3,7 +3,9 @@ import HTMLWebpackPlugin from "html-webpack-plugin"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import { BuildOptions } from "./types/config"
 
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
+const ReactRefreshWebpackPlugin = require(
+  "@pmmmwh/react-refresh-webpack-plugin"
+  )
 
 export function buildPlugins({
   paths,
