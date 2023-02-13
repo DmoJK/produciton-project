@@ -1,6 +1,7 @@
 import webpack from "webpack"
 import HTMLWebpackPlugin from "html-webpack-plugin"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 import { BuildOptions } from "./types/config"
 
 const ReactRefreshWebpackPlugin = require(
@@ -25,5 +26,6 @@ export function buildPlugins({
     }),
     new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshWebpackPlugin({overlay: false}), // overlay: false стоит чтобы увидеть PageError
+    new BundleAnalyzerPlugin({openAnalyzer: false}),
   ].filter(Boolean)
 }
