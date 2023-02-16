@@ -26,6 +26,6 @@ export function buildPlugins({
     }),
     new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshWebpackPlugin({overlay: false}), // overlay: false стоит чтобы увидеть PageError
-    new BundleAnalyzerPlugin({openAnalyzer: false}),
+    isDev && new BundleAnalyzerPlugin({openAnalyzer: false}),
   ].filter(Boolean)
 }
