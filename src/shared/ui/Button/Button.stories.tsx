@@ -58,6 +58,12 @@ Clear.args = {
   theme: ButtonTheme.CLEAR,
 }
 
+export const ClearInverted = Template.bind({})
+ClearInverted.args = {
+  children: "Text",
+  theme: ButtonTheme.CLEAR_INVERTED,
+}
+
 export const BackgroundTheme = Template.bind({})
 BackgroundTheme.args = {
   children: "Text",
