@@ -25,10 +25,3 @@ Dark.args = {
   value: "123123",
 }
 Dark.decorators = [ThemeDecorator(Theme.DARK)]
-
-export const PlaceholderInline = Template.bind({})
-PlaceholderInline.args = {
-  PlaceholderInline,
-  placeholder: "Type text",
-  value: "123123",
-}
