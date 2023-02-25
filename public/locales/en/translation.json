@@ -7,6 +7,9 @@
   "О сайте": "About",
   "Язык коротко": "En",
   "Войти": "Login",
+  "Выйти": "Logout",
   "Имя пользователя": "Username",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "Incorrect username or password"
 }
