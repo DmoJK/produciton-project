@@ -18,3 +18,18 @@ Primary.args = {
   placeholder: "Type text",
   value: "123123",
 }
+
+export const Focused = Template.bind({})
+Focused.args = {
+  placeholder: "Type text",
+  value: "123123",
+  autofocus: true
+}
+
+export const PlaceholderInline = Template.bind({})
+PlaceholderInline.args = {
+  placeholder: "Type text",
+  value: "123123",
+  placeholderInline: true
+}
+
