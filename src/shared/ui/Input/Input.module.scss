@@ -1,14 +1,7 @@
-.placeholderInline {
-  display: flex;
-}
-
-.placeholder {
-  margin-right: 5px;
-}
-
 .input {
   width: 100%;
   background: var(--bg-color);
+  border: none;
   border: 1.5px solid var(--primary-color);
   border-radius: 5px;
   color: var(--primary-color);
@@ -16,4 +9,9 @@
   &:focus {
     outline: 1.5px solid var(--inverted-primary-color);
   }
+}
+
+.placeholderInline {
+  display: flex;
+  margin-right: 5px;
 }

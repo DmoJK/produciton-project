@@ -19,17 +19,28 @@ Primary.args = {
   value: "123123",
 }
 
+export const Dark = Template.bind({})
+Dark.args = {
+  placeholder: "Type text",
+  value: "123123",
+}
+Dark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const WithoutPlaceholder = Template.bind({})
+WithoutPlaceholder.args = {
+  value: "123123",
+}
+
 export const Focused = Template.bind({})
 Focused.args = {
   placeholder: "Type text",
   value: "123123",
-  autofocus: true
+  autofocus: true,
 }
 
 export const PlaceholderInline = Template.bind({})
 PlaceholderInline.args = {
   placeholder: "Type text",
   value: "123123",
-  placeholderInline: true
+  placeholderInline: true,
 }
-

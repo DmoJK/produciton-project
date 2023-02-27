@@ -4,9 +4,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 import { BuildOptions } from "./types/config"
 
-const ReactRefreshWebpackPlugin = require(
-  "@pmmmwh/react-refresh-webpack-plugin"
-  )
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
 
 export function buildPlugins({
   paths,
@@ -25,7 +23,7 @@ export function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    isDev && new ReactRefreshWebpackPlugin({overlay: false}), // overlay: false стоит чтобы увидеть PageError
-    isDev && new BundleAnalyzerPlugin({openAnalyzer: false}),
+    isDev && new ReactRefreshWebpackPlugin({ overlay: false }), // overlay: false стоит чтобы увидеть PageError
+    isDev && new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ].filter(Boolean)
 }
