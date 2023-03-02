@@ -27,7 +27,7 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "warn",
     "react/function-component-definition": "off",
@@ -46,6 +46,10 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
+    "@typescript-eslint/no-unused-vars": [
+        "error",
+        { "argsIgnorePattern": "^_" }
+    ]
   },
   globals: {
     __IS_DEV__: true,

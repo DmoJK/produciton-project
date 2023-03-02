@@ -13,21 +13,6 @@
   flex-direction: column;
 }
 
-.link {
-  margin-left: 10px;
-  opacity: 1;
-}
-
-.item {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  fill: var(--inverted-primary-color);
-}
-
 .switchers {
   position: absolute;
   bottom: 20px;
@@ -56,11 +41,5 @@
 
   .lang {
     margin-left: 0;
-  }
-
-  .link {
-    opacity: 0;
-    transition: 0.2s opacity;
-    width: 0;
   }
 }
