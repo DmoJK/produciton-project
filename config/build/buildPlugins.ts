@@ -9,6 +9,7 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 export function buildPlugins({
   paths,
   isDev,
+  apiUrl
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HTMLWebpackPlugin({
@@ -21,6 +22,7 @@ export function buildPlugins({
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl)
     }),
     new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshWebpackPlugin({ overlay: false }), // overlay: false стоит чтобы увидеть PageError

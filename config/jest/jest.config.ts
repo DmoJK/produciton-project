@@ -21,7 +21,7 @@ export default {
     "\\.s?css$": "identity-obj-proxy",
     "\\.svg": "<rootDir>config/jest/jestEmptyContent.tsx",
   },
-  globals: { __IS_DEV__: true },
+  globals: { __IS_DEV__: true, __API__: "" },
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,

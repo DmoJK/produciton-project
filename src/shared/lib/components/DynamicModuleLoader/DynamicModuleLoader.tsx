@@ -8,8 +8,6 @@ export type ReducersList = {
   [reducerKey in StateSchemaKey]?: Reducer
 }
 
-type ReducersListEntry = [StateSchemaKey, Reducer]
-
 interface DynamicModuleLoaderProps {
   reducers: ReducersList
   removeAfterUnmount?: boolean
@@ -25,20 +23,16 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   const dispatch = useDispatch()
 
   useEffect(() => {
-    Object.entries(reducers).forEach(
-      ([reducerKey, reducer]: ReducersListEntry) => {
-        store.reducerManager.add(reducerKey, reducer)
-        dispatch({ type: `@INIT ${reducerKey} reducer` })
-      }
-    )
+    Object.entries(reducers).forEach(([reducerKey, reducer]) => {
+      store.reducerManager.add(reducerKey as StateSchemaKey, reducer)
+      dispatch({ type: `@INIT ${reducerKey} reducer` })
+    })
     return () => {
       if (removeAfterUnmount) {
-        Object.entries(reducers).forEach(
-          ([reducerKey]: ReducersListEntry) => {
-            store.reducerManager.remove(reducerKey)
-            dispatch({ type: `@DESTROY ${reducerKey} reducer` })
-          }
-        )
+        Object.entries(reducers).forEach(([reducerKey]) => {
+          store.reducerManager.remove(reducerKey as StateSchemaKey)
+          dispatch({ type: `@DESTROY ${reducerKey} reducer` })
+        })
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
