@@ -1,39 +1,38 @@
 {
-    "posts": [
-      {
-        "id": "1",
-        "title": "json-server",
-        "userId": "1"
-      },
-      {
-        "id": "2",
-        "title": "json-server",
-        "userId": "2"
-      }
-    ],
-    "comments": [
-      {
-        "id": "1",
-        "body": "some comment",
-        "postId": "1"
-      }
-    ],
-    "users": [
-      {
-        "id": "1",
-        "username": "admin",
-        "password": "123"
-      }
-    ],
-    "profile": {
-       "first": "Артём",
-       "lastname": "Пархоменко",
-       "age": 20,
-       "currency": "RUB",
-       "country": "Russia",
-       "city": "Moscow",
-       "username": "admin",
-       "avatar": "https://i.pinimg.com/564x/1d/76/2d/1d762dd68c81f90158ffd8e09c9e7142.jpg"
-      }
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Артём",
+    "lastname": "Пархоменко",
+    "age": 19,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Москва",
+    "username": "admin",
+    "avatar": "https://i.pinimg.com/564x/1d/76/2d/1d762dd68c81f90158ffd8e09c9e7142.jpg"
   }
-  
+}
