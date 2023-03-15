@@ -24,7 +24,7 @@ export const Input = memo(
     type = "text",
     placeholder,
     placeholderInline = false,
-    autofocus,
+    autofocus = false,
     readonly,
     ...otherProps
   }: InputProps) => {

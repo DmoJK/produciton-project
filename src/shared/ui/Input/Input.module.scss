@@ -1,9 +1,8 @@
 .input {
-  width: 100%;
+  width: 99.8%;
   background: var(--bg-color);
-  border: none;
-  border: 1.5px solid var(--primary-color);
   border-radius: 5px;
+  border: 1.5px solid var(--primary-color);
   color: var(--primary-color);
 
   &:focus {
