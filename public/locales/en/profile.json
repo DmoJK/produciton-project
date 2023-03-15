@@ -12,5 +12,10 @@
     "Ссылка на аватар": "Url to your avatar",
     "Укажите валюту": "Your currency",
     "Укажите страну": "Your country",
-    "Редактировать": "Edit"
+    "Редактировать": "Edit",
+    "Серверная ошибка": "Server error",
+    "Данные не указаны": "Data is not specified",
+    "Имя и фамилия обязательны": "First name and last name mustn't be empty",
+    "Некорректный возраст": "Incorrect age",
+    "Неккоректный регион": "Incorrect country"
 }
