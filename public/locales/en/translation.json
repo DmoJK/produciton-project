@@ -12,5 +12,6 @@
   "Пароль": "Password",
   "Форма авторизации": "Authorization form",
   "Вы ввели неверный логин или пароль": "Incorrect username or password",
-  "Профиль": "Profile"
+  "Профиль": "Profile",
+  "Статьи": "Articles"
 }
