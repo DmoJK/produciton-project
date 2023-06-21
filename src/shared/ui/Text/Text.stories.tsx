@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { Theme } from "app/providers/ThemeProvider"
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Text, TextTheme } from "./Text"
+import { Text, TextSize, TextTheme } from "./Text"
 
 export default {
   title: "shared/Text",
@@ -23,7 +23,7 @@ export const Error = Template.bind({})
 Error.args = {
   title: "The title",
   text: "the text",
-  theme: TextTheme.ERROR
+  theme: TextTheme.ERROR,
 }
 
 export const OnlyTitle = Template.bind({})
@@ -43,22 +43,23 @@ Dark.args = {
 }
 Dark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const ErrorDark = Template.bind({})
-ErrorDark.args = {
+export const Purple = Template.bind({})
+Purple.args = {
   title: "The title",
   text: "the text",
-  theme: TextTheme.ERROR
 }
-ErrorDark.decorators = [ThemeDecorator(Theme.DARK)]
+Purple.decorators = [ThemeDecorator(Theme.PURPLE)]
 
-export const OnlyTitleDark = Template.bind({})
-OnlyTitleDark.args = {
+export const SizeM = Template.bind({})
+SizeM.args = {
   title: "The title",
-}
-OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)]
-
-export const OnlyTextDark = Template.bind({})
-OnlyTextDark.args = {
   text: "the text",
+  size: TextSize.M,
 }
-OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const SizeL = Template.bind({})
+SizeL.args = {
+  title: "The title",
+  text: "the text",
+  size: TextSize.L,
+}

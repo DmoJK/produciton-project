@@ -7,6 +7,7 @@ import {
   ReducersMapObject,
 } from "@reduxjs/toolkit"
 import { AxiosInstance } from "axios"
+import { articleDetailsSchema } from "entities/Article"
 import { ProfileSchema } from "entities/Profile"
 import { UserSchema } from "entities/User"
 import { LoginSchema } from "features/AuthByUsername"
@@ -18,6 +19,7 @@ export interface StateSchema {
   // ассинхронные редьюсеры
   login?: LoginSchema
   profile?: ProfileSchema
+  articleDetails?: articleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
@@ -44,4 +46,3 @@ export interface ThunkConfig<T> {
   dispatch: Dispatch
   state: StateSchema
 }
-

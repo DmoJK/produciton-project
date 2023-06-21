@@ -33,9 +33,9 @@ WithoutPlaceholder.args = {
 
 export const Focused = Template.bind({})
 Focused.args = {
+  autofocus: true,
   placeholder: "Type text",
   value: "123123",
-  autofocus: true,
 }
 
 export const PlaceholderInline = Template.bind({})
