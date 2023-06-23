@@ -13,5 +13,6 @@
   "Форма авторизации": "Authorization form",
   "Вы ввели неверный логин или пароль": "Incorrect username or password",
   "Профиль": "Profile",
-  "Статьи": "Articles"
+  "Статьи": "Articles",
+  "Комментарии отсутствуют": "There are no comments"
 }

@@ -1,7 +1,7 @@
 import { error } from "console"
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById"
 import { Article, ArticleBlockType, ArticleType } from "../types/article"
-import { articleDetailsSchema } from "../types/articleDetailsSchema"
+import { ArticleDetailsSchema } from "../types/articleDetailsSchema"
 import { articleDetailsActions, articleDetailsReducer } from "./articleDetailsSlice"
 
 
@@ -32,19 +32,19 @@ const data: Article = {
 
 describe("articleDetailsSlice", () => {
   test("fetch articleById service pending", () => {
-    const state: DeepPartial<articleDetailsSchema> = {
+    const state: DeepPartial<ArticleDetailsSchema> = {
       isLoading: false,
       error: 'error'
     }
     expect(
-        articleDetailsReducer(state as articleDetailsSchema, fetchArticleById.pending)
+        articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)
     ).toEqual({ isLoading: true, error: undefined })
   })
   test("fetch articleById service fulfilled", () => {
-    const state: DeepPartial<articleDetailsSchema> = { isLoading: true }
+    const state: DeepPartial<ArticleDetailsSchema> = { isLoading: true }
     expect(
         articleDetailsReducer(
-        state as articleDetailsSchema,
+        state as ArticleDetailsSchema,
         fetchArticleById.fulfilled(data, "", "")
       )
     ).toEqual({ isLoading: false, data })
