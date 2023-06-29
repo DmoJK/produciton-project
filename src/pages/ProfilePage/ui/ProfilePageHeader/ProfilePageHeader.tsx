@@ -1,4 +1,5 @@
 import {
+  getProfileData,
   getProfileReadonly,
   profileActions,
   updateProfileData,
@@ -10,6 +11,7 @@ import { classNames } from "shared/lib/classNames/classNames"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch"
 import { Button, ButtonTheme } from "shared/ui/Button/Button"
 import { Text } from "shared/ui/Text/Text"
+import { getUserAuthData } from "entities/User"
 import cls from "./ProfilePageHeader.module.scss"
 
 interface ProfilePageHeaderProps {
@@ -21,6 +23,9 @@ export const ProfilePageHeader = memo(
     const { t } = useTranslation("profile")
     const readonly = useSelector(getProfileReadonly)
     const dispatch = useAppDispatch()
+    const authData = useSelector(getUserAuthData)
+    const profileData = useSelector(getProfileData)
+    const canEdit = authData?.id === profileData?.id
 
     const onEdit = useCallback(() => {
       dispatch(profileActions.setReadonly(false))
@@ -37,7 +42,9 @@ export const ProfilePageHeader = memo(
     return (
       <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
         <Text title={t("Профиль")} />
-        {readonly ? (
+        {canEdit && (
+          <div className={cls.btnWrapper}>
+            {readonly ? (
           <Button
             theme={ButtonTheme.OUTLINE}
             className={cls.editBtn}
@@ -62,6 +69,8 @@ export const ProfilePageHeader = memo(
               {t("Сохранить")}
             </Button>
           </>
+        )}
+          </div>
         )}
       </div>
     )

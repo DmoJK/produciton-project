@@ -14,5 +14,7 @@
   "Вы ввели неверный логин или пароль": "Incorrect username or password",
   "Профиль": "Profile",
   "Статьи": "Articles",
-  "Комментарии отсутствуют": "There are no comments"
+  "Комментарии отсутствуют": "There are no comments",
+  "Введите текст комментария": "Enter the comment text",
+  "Отправить": "Send"
 }

@@ -1,7 +1,7 @@
 import { error } from "console"
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById"
 import { Article, ArticleBlockType, ArticleType } from "../types/article"
-import { ArticleDetailsSchema } from "../types/articleDetailsSchema"
+import { ArticleDetailsSchema } from "../types/ArticleDetailsSchema"
 import { articleDetailsActions, articleDetailsReducer } from "./articleDetailsSlice"
 
 

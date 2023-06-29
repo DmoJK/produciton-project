@@ -10,7 +10,7 @@ export const fetchCommentsByArticleId = createAsyncThunk<
   "articleDetails/fetchCommentsByArticleId",
   async (articleId, { extra, rejectWithValue }) => {
     if (!articleId) {
-      return rejectWithValue("error")
+      return rejectWithValue("no data")
     }
 
     try {

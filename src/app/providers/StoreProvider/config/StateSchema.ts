@@ -1,7 +1,6 @@
 import {
   AnyAction,
   CombinedState,
-  Dispatch,
   EnhancedStore,
   Reducer,
   ReducersMapObject,
@@ -10,9 +9,11 @@ import { AxiosInstance } from "axios"
 import { ArticleDetailsSchema } from "entities/Article"
 import { ProfileSchema } from "entities/Profile"
 import { UserSchema } from "entities/User"
+import { AddCommentFormSchema } from "features/AddCommentForm"
 import { LoginSchema } from "features/AuthByUsername"
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage"
 import { NavigateOptions, To } from "react-router-dom"
+import { AppDispatch } from "./store"
 
 export interface StateSchema {
   user: UserSchema
@@ -22,6 +23,7 @@ export interface StateSchema {
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
   articleDetailsComments?: ArticleDetailsCommentsSchema
+  addCommentForm?: AddCommentFormSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
@@ -45,6 +47,6 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
   rejectValue: T
   extra: ThunkExtraArg
-  dispatch: Dispatch
+  dispatch: AppDispatch
   state: StateSchema
 }
