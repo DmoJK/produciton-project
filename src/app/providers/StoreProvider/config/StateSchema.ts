@@ -7,6 +7,7 @@ import {
 } from "@reduxjs/toolkit"
 import { AxiosInstance } from "axios"
 import { ArticleDetailsSchema } from "entities/Article"
+import { ArticlesPageSchema } from "pages/ArticlesPage"
 import { ProfileSchema } from "entities/Profile"
 import { UserSchema } from "entities/User"
 import { AddCommentFormSchema } from "features/AddCommentForm"
@@ -24,6 +25,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema
   articleDetailsComments?: ArticleDetailsCommentsSchema
   addCommentForm?: AddCommentFormSchema
+  articlesPage?: ArticlesPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
