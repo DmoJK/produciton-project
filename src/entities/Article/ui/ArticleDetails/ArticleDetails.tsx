@@ -12,6 +12,7 @@ import { Skeleton } from "shared/ui/Skeleton/Skeleton"
 import { Avatar } from "shared/ui/Avatar/Avatar"
 import EyeIcon from "shared/assets/icons/eye.svg"
 import CalendarIcon from "shared/assets/icons/calendar.svg"
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect"
 import { Icon } from "shared/ui/Icon/Icon"
 import cls from "./ArticleDetails.module.scss"
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice"
@@ -74,11 +75,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }
   }, [])
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchArticleById(id))
-    }
-  }, [dispatch, id])
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id))
+  })
 
   let content
 

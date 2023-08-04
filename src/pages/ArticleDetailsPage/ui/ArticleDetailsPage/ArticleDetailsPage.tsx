@@ -2,13 +2,15 @@ import { classNames } from "shared/lib/classNames/classNames"
 import { useTranslation } from "react-i18next"
 import { memo, useCallback } from "react"
 import { useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { ArticleDetails } from "entities/Article"
 import { CommentList } from "entities/Comment"
 import { Text } from "shared/ui/Text/Text"
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch"
 import { AddCommentForm } from "features/AddCommentForm"
+import { RoutePath } from "shared/config/routeConfig/routeConfig"
+import { Button, ButtonTheme } from "shared/ui/Button/Button"
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -40,6 +42,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const comments = useSelector(getArticleComments.selectAll)
   const commentsIsLoading = useSelector(getArticlesCommentsIsLoading)
   const commentsError = useSelector(getArticlesCommentsError)
+  const navigate = useNavigate()
 
   const onSendComment = useCallback(
     (text: string) => {
@@ -47,6 +50,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     },
     [dispatch]
   )
+
+  const onBackToArticles = useCallback(() => {
+    navigate(RoutePath.articles)
+  }, [navigate])
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id))
@@ -63,6 +70,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToArticles}>
+          {t("Назад к статьям")}
+        </Button>
         <ArticleDetails id={id} />
         <Text className={cls.commentTitle} title={t("Комментарии")} />
         <AddCommentForm onSendComment={onSendComment} />
