@@ -1,5 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames"
-import { memo } from "react"
+import { memo, useCallback } from "react"
+import { Page } from "shared/ui/Page/Page"
 import { ArticleList, ArticleView } from "entities/Article"
 import {
   DynamicModuleLoader,
@@ -8,6 +9,7 @@ import {
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch"
 import { ArticlesViewSelector } from "features/ArticlesViewSelector"
+import { Text, TextTheme } from "shared/ui/Text/Text"
 import { useSelector } from "react-redux"
 import cls from "./ArticlesPage.module.scss"
 import {
@@ -21,6 +23,7 @@ import {
   getArticlePageIsLoading,
   getArticlePageIsView,
 } from "../../model/selectors/articlesPageSelector"
+import { fetchNextArticlesList } from "../../model/services/fetchNextArticlesList/fetchNextArticlesList"
 
 interface ArticlesPageProps {
   className?: string
@@ -41,17 +44,28 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     dispatch(articlesPageActions.setView(view))
   }
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesList())
+  }, [dispatch])
+
   useInitialEffect(() => {
-    dispatch(fetchArticlesList())
     dispatch(articlesPageActions.initState())
+    dispatch(fetchArticlesList({ page: 1 }))
   })
+
+  if(error) {
+    return <Text theme={TextTheme.ERROR} title="Something went wrong" />
+  }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticlesPage, {}, [className])}>
+      <Page
+        onScrollEnd={onLoadNextPart}
+        className={classNames(cls.ArticlesPage, {}, [className])}
+      >
         <ArticlesViewSelector view={view} onViewChange={onViewChange} />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

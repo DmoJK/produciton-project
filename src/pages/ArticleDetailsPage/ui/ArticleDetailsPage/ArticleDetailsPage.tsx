@@ -1,6 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import { useTranslation } from "react-i18next"
 import { memo, useCallback } from "react"
+import { Page } from "shared/ui/Page/Page"
 import { useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 import { ArticleDetails } from "entities/Article"
@@ -18,7 +19,7 @@ import {
 import {
   ArticleDetailsCommentsReducer,
   getArticleComments,
-} from "../../model/slice/ArticleDetailsCommentsSlice"
+} from "../../model/slice/articleDetailsCommentsSlice"
 import cls from "./ArticleDetailsPage.module.scss"
 import {
   getArticlesCommentsError,
@@ -69,7 +70,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToArticles}>
           {t("Назад к статьям")}
         </Button>
@@ -77,7 +78,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <Text className={cls.commentTitle} title={t("Комментарии")} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

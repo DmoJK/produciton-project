@@ -2,25 +2,29 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { Theme } from "app/providers/ThemeProvider"
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import {ArticlesViewSelector} from "./ArticlesViewSelector"
+import {Page} from "./Page"
 
 export default {
-  title: "features/ArticlesViewSelector",
-  component: ArticlesViewSelector,
+  title: "page/Page",
+  component: Page,
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof ArticlesViewSelector>
+} as ComponentMeta<typeof Page>
 
-const Template: ComponentStory<typeof ArticlesViewSelector> = (args) => (
-  <ArticlesViewSelector {...args} />
+const Template: ComponentStory<typeof Page> = (args) => (
+  <Page {...args} />
 )
 
 export const Primary = Template.bind({})
-Primary.args = {}
+Primary.args = {
+  children: <div>Wrapper</div>
+}
 
 export const Dark = Template.bind({})
-Dark.args = {}
+Dark.args = {
+  children: <div>Wrapper</div>
+}
 Dark.decorators = [
   ThemeDecorator(Theme.DARK),
 ]

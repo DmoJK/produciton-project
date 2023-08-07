@@ -83,11 +83,17 @@ LIST.args = {
 export const TILELoading = Template.bind({})
 TILELoading.args = {
   isLoading: true,
+  articles: new Array(0)
+    .fill(0)
+    .map((item, index) => ({ ...article, id: String(index) })),
 }
 
 export const LISTLoading = Template.bind({})
 LISTLoading.args = {
   view: ArticleView.LIST,
   isLoading: true,
+  articles: new Array(0)
+  .fill(0)
+  .map((item, index) => ({ ...article, id: String(index) })),
 }
 
