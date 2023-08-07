@@ -1,15 +1,17 @@
 import { StateSchema } from "app/providers/StoreProvider"
 import { ArticleView } from "entities/Article"
 
-export const getArticlePageIsLoading = (state: StateSchema) =>
+export const getArticlesPageIsLoading = (state: StateSchema) =>
   state.articlesPage?.isLoading || false
-export const getArticlePageError = (state: StateSchema) =>
+export const getArticlesPageError = (state: StateSchema) =>
   state.articlesPage?.error
-export const getArticlePageIsView = (state: StateSchema) =>
+export const getArticlesPageIsView = (state: StateSchema) =>
   state.articlesPage?.view || ArticleView.TILE
-  export const getArticlePageNum = (state: StateSchema) =>
+export const getArticlesPageNum = (state: StateSchema) =>
   state.articlesPage?.page || 1
-  export const getArticlePageLimit = (state: StateSchema) =>
+export const getArticlesPageLimit = (state: StateSchema) =>
   state.articlesPage?.limit || 9
-  export const getArticlePageHasMore = (state: StateSchema) =>
+export const getArticlesPageHasMore = (state: StateSchema) =>
   state.articlesPage?.hasMore
+export const getArticlesPageInited = (state: StateSchema) =>
+  state.articlesPage?._inited

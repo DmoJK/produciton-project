@@ -17,13 +17,13 @@ import {
   articlesPageReducer,
   getArticles,
 } from "../../model/slice/articlesPageSlice"
-import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList"
 import {
-  getArticlePageError,
-  getArticlePageIsLoading,
-  getArticlePageIsView,
+  getArticlesPageError,
+  getArticlesPageIsLoading,
+  getArticlesPageIsView,
 } from "../../model/selectors/articlesPageSelector"
 import { fetchNextArticlesList } from "../../model/services/fetchNextArticlesList/fetchNextArticlesList"
+import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage"
 
 interface ArticlesPageProps {
   className?: string
@@ -36,9 +36,9 @@ const reducers: ReducersList = {
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const dispatch = useAppDispatch()
   const articles = useSelector(getArticles.selectAll)
-  const isLoading = useSelector(getArticlePageIsLoading)
-  const error = useSelector(getArticlePageError)
-  const view = useSelector(getArticlePageIsView)
+  const isLoading = useSelector(getArticlesPageIsLoading)
+  const error = useSelector(getArticlesPageError)
+  const view = useSelector(getArticlesPageIsView)
 
   const onViewChange = (view: ArticleView) => {
     dispatch(articlesPageActions.setView(view))
@@ -49,16 +49,15 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   }, [dispatch])
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState())
-    dispatch(fetchArticlesList({ page: 1 }))
+    dispatch(initArticlesPage())
   })
 
-  if(error) {
+  if (error) {
     return <Text theme={TextTheme.ERROR} title="Something went wrong" />
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
