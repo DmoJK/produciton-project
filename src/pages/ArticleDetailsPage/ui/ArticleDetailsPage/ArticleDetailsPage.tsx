@@ -1,7 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import { useTranslation } from "react-i18next"
 import { memo, useCallback } from "react"
-import { Page } from "shared/ui/Page/Page"
+import { Page } from "widgets/Page"
 import { useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 import { ArticleDetails } from "entities/Article"

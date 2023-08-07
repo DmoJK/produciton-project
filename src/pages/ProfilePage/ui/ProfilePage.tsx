@@ -20,9 +20,9 @@ import {
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch"
-import { Page } from "shared/ui/Page/Page"
 import { Text, TextTheme } from "shared/ui/Text/Text"
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect"
+import { Page } from "widgets/Page"
 import { useParams } from "react-router-dom"
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader"
 

@@ -13,11 +13,12 @@ import { UserSchema } from "entities/User"
 import { AddCommentFormSchema } from "features/AddCommentForm"
 import { LoginSchema } from "features/AuthByUsername"
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage"
-import { NavigateOptions, To } from "react-router-dom"
-import { AppDispatch } from "./store"
+import { ScrollSaverSchema } from "widgets/Page"
+import { AppDispatch } from "./store" 
 
 export interface StateSchema {
   user: UserSchema
+  scrollSaver: ScrollSaverSchema
 
   // ассинхронные редьюсеры
   login?: LoginSchema

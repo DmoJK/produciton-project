@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import { memo, useCallback } from "react"
-import { Page } from "shared/ui/Page/Page"
+import { Page } from "widgets/Page"
 import { ArticleList, ArticleView } from "entities/Article"
 import {
   DynamicModuleLoader,
