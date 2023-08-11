@@ -1,3 +1,5 @@
+export { articleDetailsPageReducer } from "./model/slice"
+
 export { ArticleDetailsPageLazy as ArticleDetailsPage } from "./ui/ArticleDetailsPage/ArticleDerailsPage.lazy"
 
-export { ArticleDetailsCommentsSchema } from "./model/types/ArticleDetailsCommentsSchema"
+export { ArticleDetailsPageSchema } from "./model/types"

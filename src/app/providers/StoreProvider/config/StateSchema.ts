@@ -12,9 +12,11 @@ import { ProfileSchema } from "entities/Profile"
 import { UserSchema } from "entities/User"
 import { AddCommentFormSchema } from "features/AddCommentForm"
 import { LoginSchema } from "features/AuthByUsername"
-import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage"
+import {
+  ArticleDetailsPageSchema,
+} from "pages/ArticleDetailsPage"
 import { ScrollSaverSchema } from "widgets/Page"
-import { AppDispatch } from "./store" 
+import { AppDispatch } from "./store"
 
 export interface StateSchema {
   user: UserSchema
@@ -24,9 +26,9 @@ export interface StateSchema {
   login?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
-  articleDetailsComments?: ArticleDetailsCommentsSchema
   addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlesPageSchema
+  articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

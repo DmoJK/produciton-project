@@ -1,13 +1,13 @@
 import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId"
 import { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema"
-import { ArticleDetailsCommentsReducer } from "./ArticleDetailsCommentsSlice"
+import { articleDetailsCommentsReducer } from "./articleDetailsCommentsSlice"
 
 const entities = {
   "1": {
     id: "1",
     text: "Hello",
     user: { id: "1", username: "User1" },
-  }
+  },
 }
 
 describe("ArticleDetailsCommentsSlice", () => {
@@ -19,7 +19,7 @@ describe("ArticleDetailsCommentsSlice", () => {
       entities: {},
     }
     expect(
-      ArticleDetailsCommentsReducer(
+      articleDetailsCommentsReducer(
         state as ArticleDetailsCommentsSchema,
         fetchCommentsByArticleId.pending
       )
@@ -28,7 +28,7 @@ describe("ArticleDetailsCommentsSlice", () => {
   test("fetch CommentsByArticleId service fulfilled", () => {
     const state: DeepPartial<ArticleDetailsCommentsSchema> = { isLoading: true }
     expect(
-      ArticleDetailsCommentsReducer(
+      articleDetailsCommentsReducer(
         state as ArticleDetailsCommentsSchema,
         fetchCommentsByArticleId.fulfilled(
           [
