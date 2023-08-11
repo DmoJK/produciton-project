@@ -10,7 +10,7 @@ import {
 } from "../../model/types/article"
 
 export default {
-  title: "entities/ArticleDetails",
+  title: "entities/Article/ArticleDetails",
   component: ArticleDetails,
   argTypes: {
     backgroundColor: { control: "color" },

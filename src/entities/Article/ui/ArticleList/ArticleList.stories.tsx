@@ -6,7 +6,7 @@ import { ArticleList } from "./ArticleList"
 import { Article, ArticleView } from "../../model/types/article"
 
 export default {
-  title: "entities/ArticleList",
+  title: "entities/Article/ArticleList",
   component: ArticleList,
   argTypes: {
     backgroundColor: { control: "color" },

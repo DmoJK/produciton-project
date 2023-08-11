@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk"
 import { fetchNextArticlesList } from "./fetchNextArticlesList"
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList"
+import { getArticlesPageNum } from "../../selectors/articlesPageSelector"
 
 jest.mock("../fetchArticlesList/fetchArticlesList")
 
@@ -18,9 +19,10 @@ describe("fetchNextArticlesList", () => {
     })
 
     await thunk.callThunk()
+    const page = getArticlesPageNum(thunk.getState())
 
     expect(thunk.dispatch).toBeCalledTimes(4)
-    expect(fetchArticlesList).toBeCalledWith({ page: 3 })
+    expect(fetchArticlesList).toBeCalledWith({replace: false})
   })
   test("fetchArticlesList not called, hasMore false", async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesList, {
