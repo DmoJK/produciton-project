@@ -16,7 +16,6 @@ export const initArticlesPage = createAsyncThunk<
     const inited = getArticlesPageInited(getState())
     if (!inited) {
       searchParams.forEach((value, key) => {
-        console.log(key, value)
         switch (key) {
           case "order":
             dispatch(articlesPageActions.setOrder(value as SortOrder))
