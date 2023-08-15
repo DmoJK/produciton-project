@@ -8,7 +8,7 @@
     "dev:server": "node ./json-server/index.js",
     "start:dev": "concurrently \"npm start\" \"npm run dev:server\" ",
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production",
+    "build:prod": "webpack --env mode=production apiUrl=https://production-project-server.onrender.com/",
     "lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
