@@ -8,14 +8,13 @@ import { CommentCard } from "../CommentCard/CommentCard"
 
 interface CommentListProps {
   className?: string
-  comments: Comment[] | []
+  comments?: Comment[]
   isLoading?: boolean
 }
 
 export const CommentList = memo(
   ({ className, comments, isLoading }: CommentListProps) => {
     const { t } = useTranslation()
-    console.log(comments, "comm")
 
     if (isLoading) {
       return (
