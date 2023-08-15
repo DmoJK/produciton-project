@@ -559,6 +559,12 @@
       "userId": "2",
       "text": "I love kotlin",
       "id": "WYpXQ-n"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "hi",
+      "id": "mxPhDpH"
     }
   ],
   "users": [
