@@ -18,7 +18,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "react-hooks",
+    "dmojk-plugin",
+  ],
   rules: {
     "react/jsx-filename-extension": [
       1,
@@ -49,6 +55,7 @@ module.exports = {
     "no-undef": "off",
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     "react/no-array-index-key": "warn",
+    "dmojk-plugin/path-checker": "error",
   },
   globals: {
     __IS_DEV__: true,

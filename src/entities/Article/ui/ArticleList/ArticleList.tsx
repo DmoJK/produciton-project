@@ -38,7 +38,7 @@ export const ArticleList = memo(
         key={article.id}
         article={article}
         view={view}
-        target={target }
+        target={target}
       />
     )
 
