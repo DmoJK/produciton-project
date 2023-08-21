@@ -50,6 +50,13 @@ Purple.args = {
 }
 Purple.decorators = [ThemeDecorator(Theme.PURPLE)]
 
+export const SizeS = Template.bind({})
+SizeS.args = {
+  title: "The title",
+  text: "the text",
+  size: TextSize.S,
+}
+
 export const SizeM = Template.bind({})
 SizeM.args = {
   title: "The title",
