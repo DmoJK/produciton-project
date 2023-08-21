@@ -12,7 +12,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch"
 import { Button, ButtonTheme } from "shared/ui/Button/Button"
 import { Text } from "shared/ui/Text/Text"
 import { getUserAuthData } from "entities/User"
-import cls from "./ProfilePageHeader.module.scss"
+import { HStack } from "shared/ui/Stack"
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -40,39 +40,27 @@ export const ProfilePageHeader = memo(
     }, [dispatch])
 
     return (
-      <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+      <HStack justify="between" max className={classNames("", {}, [className])}>
         <Text title={t("Профиль")} />
         {canEdit && (
-          <div className={cls.btnWrapper}>
+          <div>
             {readonly ? (
-          <Button
-            theme={ButtonTheme.OUTLINE}
-            className={cls.editBtn}
-            onClick={onEdit}
-          >
-            {t("Редактировать")}
-          </Button>
-        ) : (
-          <>
-            <Button
-              theme={ButtonTheme.OUTLINE_RED}
-              className={cls.editBtn}
-              onClick={onCancelEdit}
-            >
-              {t("Отменить")}
-            </Button>
-            <Button
-              theme={ButtonTheme.OUTLINE}
-              className={cls.saveBtn}
-              onClick={onSave}
-            >
-              {t("Сохранить")}
-            </Button>
-          </>
-        )}
+              <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+                {t("Редактировать")}
+              </Button>
+            ) : (
+              <HStack gap="8" max>
+                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>
+                  {t("Отменить")}
+                </Button>
+                <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
+                  {t("Сохранить")}
+                </Button>
+              </HStack>
+            )}
           </div>
         )}
-      </div>
+      </HStack>
     )
   }
 )
