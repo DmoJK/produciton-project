@@ -36,7 +36,7 @@ export const CurrencySelect = memo(
         label={t("Укажите валюту")}
         defaultValue={t("Валюта")}
         value={value}
-        direction="top"
+        direction="top-right"
         className={classNames("", {}, [className])}
       />
     )

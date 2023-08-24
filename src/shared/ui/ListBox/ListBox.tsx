@@ -6,8 +6,7 @@ import { HStack } from "../Stack"
 import cls from "./ListBox.module.scss"
 import { Icon } from "../Icon/Icon"
 import { Button } from "../Button/Button"
-
-type DropdownDirection = "top" | "bottom"
+import { DropdownDirection } from "../../types/ui"
 
 interface ListBoxItem {
   value: string
@@ -35,7 +34,7 @@ export const ListBox = memo(
     defaultValue,
     value,
     readonly,
-    direction = "bottom",
+    direction = "bottom-right",
   }: ListBoxProps) => {
     const optionClasses = [
       cls[direction]
