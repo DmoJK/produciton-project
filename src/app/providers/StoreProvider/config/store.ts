@@ -8,6 +8,7 @@ import { userReducer } from "entities/User"
 import { scrollSaverReducer } from "widgets/Page"
 import { useDispatch } from "react-redux"
 import { $api } from "shared/api/api"
+import { rtkApi } from "shared/api/rtkApi"
 import { createReducerManager } from "./reducerManager"
 import { StateSchema, ThunkExtraArg } from "./StateSchema"
 
@@ -19,6 +20,7 @@ export const createReduxStore = (
     ...asyncReducers,
     user: userReducer,
     scrollSaver: scrollSaverReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   }
 
   const extraArg: ThunkExtraArg = {
@@ -36,7 +38,7 @@ export const createReduxStore = (
         thunk: {
           extraArgument: extraArg,
         },
-      }),
+      }).concat(rtkApi.middleware),
   })
 
   // @ts-ignore

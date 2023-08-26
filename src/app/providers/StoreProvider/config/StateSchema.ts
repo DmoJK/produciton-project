@@ -8,27 +8,25 @@ import {
 import { AxiosInstance } from "axios"
 import { ArticleDetailsSchema } from "entities/Article"
 import { ArticlesPageSchema } from "pages/ArticlesPage"
-import { ProfileSchema } from "entities/Profile"
 import { UserSchema } from "entities/User"
-import { AddCommentFormSchema } from "features/AddCommentForm"
 import { LoginSchema } from "features/AuthByUsername"
-import {
-  ArticleDetailsPageSchema,
-} from "pages/ArticleDetailsPage"
 import { ScrollSaverSchema } from "widgets/Page"
+import { rtkApi } from "shared/api/rtkApi"
+import { CommentFormSchema } from "entities/Comment"
+import { ProfileSchema } from "features/EditableProfileCard"
 import { AppDispatch } from "./store"
 
 export interface StateSchema {
   user: UserSchema
   scrollSaver: ScrollSaverSchema
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   // ассинхронные редьюсеры
   login?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
-  addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlesPageSchema
-  articleDetailsPage?: ArticleDetailsPageSchema
+  commentForm?: CommentFormSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

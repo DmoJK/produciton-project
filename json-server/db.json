@@ -571,6 +571,54 @@
       "userId": "1",
       "text": "hello",
       "id": "YvFzIDN"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "Hello",
+      "id": "gfK8gR4"
+    },
+    {
+      "text": "Does it work",
+      "articleId": "7",
+      "userId": "1",
+      "id": "m6esxHu"
+    },
+    {
+      "text": "I love Ruby",
+      "articleId": "7",
+      "userId": "1",
+      "id": "d08HDAZ"
+    },
+    {
+      "text": "Kotlin programmers here?",
+      "articleId": "3",
+      "userId": "1",
+      "id": "R2GKAXf"
+    },
+    {
+      "text": "Yes",
+      "articleId": "3",
+      "userId": "1",
+      "id": "YzAHWY8"
+    },
+    {
+      "text": "C# better",
+      "articleId": "3",
+      "userId": "1",
+      "id": "21TaxoI"
+    },
+    {
+      "text": "Simply",
+      "articleId": "7",
+      "userId": "1",
+      "id": "J2QDR40"
+    },
+    {
+      "text": "why so much flud?",
+      "articleId": "7",
+      "userId": "1",
+      "id": "r6-2d9a"
     }
   ],
   "users": [
@@ -592,11 +640,11 @@
   "profile": [
     {
       "id": "1",
-      "first": "Artemiy",
-      "lastname": "Parkhom",
-      "age": 19,
-      "currency": "RUB",
-      "country": "Russia",
+      "first": "Artem",
+      "lastname": "Parkhomenko",
+      "age": 20,
+      "currency": "EUR",
+      "country": "Belarus",
       "city": "Moscow",
       "username": "admin",
       "avatar": "https://i.pinimg.com/564x/44/fb/59/44fb59cc166df5707146c2a59768dce1.jpg"

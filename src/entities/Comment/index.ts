@@ -1,2 +1,5 @@
 export { CommentList } from "./ui/CommentList/CommentList"
+export { CommentForm } from "./ui/CommentForm/CommentForm"
 export { Comment } from "./model/types/comment"
+export { CommentFormSchema } from "./model/types/CommentFormSchema"
+export { commentFormReducer } from "./model/slice/commentFormSlice"
