@@ -95,6 +95,7 @@ export const ProfileCard = memo(
           className={cls.input}
           onChange={onChangeFirstname}
           readonly={readonly}
+          data-testid="ProfileCard.Firstname"
         />
         <Input
           placeholder={t("Ваша фамилия")}
@@ -102,6 +103,7 @@ export const ProfileCard = memo(
           className={cls.input}
           onChange={onChangeLastname}
           readonly={readonly}
+          data-testid="ProfileCard.Lastname"
         />
         <Input
           placeholder={t("Ваш возраст")}
@@ -110,6 +112,7 @@ export const ProfileCard = memo(
           className={cls.input}
           onChange={onChangeAge}
           readonly={readonly}
+          data-testid="ProfileCard.Age"
         />
         <Input
           placeholder={t("Имя пользователя")}
