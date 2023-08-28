@@ -40,9 +40,12 @@
 }
 
 .TILE {
-  width: 230px;
   transition: all 0.2s;
   cursor: pointer;
+
+  .card {
+    width: 230px;
+  }
 
   .date {
     position: absolute;

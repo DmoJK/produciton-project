@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next"
 import { classNames } from "shared/lib/classNames/classNames"
 import { useParams } from "react-router-dom"
 import { Text } from "shared/ui/Text/Text"
-import cls from "./ArticleEditPage.module.scss"
 
 interface ArticleEditPageProps {
   className?: string
@@ -16,7 +15,7 @@ const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
   const isEdit = Boolean(id)
 
   return (
-    <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
+    <Page className={classNames('', {}, [className])}>
       {isEdit ? (
         <Text title={t("Редактирование статьи ") + id} />
       ) : (

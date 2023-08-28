@@ -5,11 +5,12 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import {Page} from "./Page"
 
 export default {
-  title: "page/Page",
+  title: "widget/Page",
   component: Page,
   argTypes: {
     backgroundColor: { control: "color" },
   },
+  decorators: [StoreDecorator({})]
 } as ComponentMeta<typeof Page>
 
 const Template: ComponentStory<typeof Page> = (args) => (

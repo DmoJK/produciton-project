@@ -7,6 +7,7 @@ export {
   ArticleView,
   ArticleSortField,
   ArticleType,
+  ArticleBlockType,
 } from "./model/types/article"
 export { getArticleDetailsData } from "./model/selectors/articleDetails"
 export type { ArticleDetailsSchema } from "./model/types/ArticleDetailsSchema"

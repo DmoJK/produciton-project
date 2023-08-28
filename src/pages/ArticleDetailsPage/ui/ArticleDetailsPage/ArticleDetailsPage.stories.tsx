@@ -1,8 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Theme } from "app/providers/ThemeProvider"
 import { Article } from "entities/Article"
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
 import {
   ArticleBlockType,
   ArticleType,
@@ -68,5 +66,17 @@ Primary.decorators = [
     articleDetails: {
       data: article,
     },
+    commentForm: { text: "comment" },
+  }),
+]
+export const CanEdit = Template.bind({})
+CanEdit.args = {}
+CanEdit.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      data: article,
+    },
+    commentForm: { text: "comment" },
+    user: { authData: { id: "1", username: "artem" } },
   }),
 ]

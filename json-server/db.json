@@ -619,6 +619,12 @@
       "articleId": "7",
       "userId": "1",
       "id": "r6-2d9a"
+    },
+    {
+      "text": "java is hardest program language?",
+      "articleId": "6",
+      "userId": "1",
+      "id": "f8HlJGK"
     }
   ],
   "users": [
@@ -626,21 +632,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": ["ADMIN"],
+      "role": [
+        "ADMIN"
+      ],
       "avatar": "https://i.pinimg.com/564x/44/fb/59/44fb59cc166df5707146c2a59768dce1.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": ["USER"],
+      "role": [
+        "USER"
+      ],
       "avatar": "https://i.pinimg.com/564x/95/4b/fb/954bfb4770fdd6200ae5fd1772b088e6.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "role": ["MANAGER"],
+      "role": [
+        "MANAGER"
+      ],
       "avatar": "https://i.pinimg.com/564x/95/4b/fb/954bfb4770fdd6200ae5fd1772b088e6.jpg"
     }
   ],
@@ -649,7 +661,7 @@
       "id": "1",
       "first": "Artem",
       "lastname": "Parkhomenko",
-      "age": 20,
+      "age": 19,
       "currency": "EUR",
       "country": "Belarus",
       "city": "Moscow",
