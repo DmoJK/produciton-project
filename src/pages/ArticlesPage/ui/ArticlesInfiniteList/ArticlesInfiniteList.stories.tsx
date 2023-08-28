@@ -7,8 +7,8 @@ import {
   ArticleBlockType,
   ArticleSortField,
   ArticleType,
-  ArticleView,
-} from "entities/Article/model/types/article"
+  ArticleView
+} from "entities/Article/model/consts/ArticleConsts"
 import { ArticlesPageSchema } from "../../model/types/ArticlesPageSchema"
 import { ArticlesInfiniteList } from "./ArticlesInfiniteList"
 

@@ -12,10 +12,9 @@ import { AppLink } from "shared/ui/AppLink/AppLink"
 import cls from "./ArticleListItem.module.scss"
 import {
   Article,
-  ArticleBlockType,
   ArticleTextBlock,
-  ArticleView,
 } from "../../model/types/article"
+import { ArticleBlockType, ArticleView } from "../../model/consts/ArticleConsts"
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent"
 
 interface ArticleListItemProps {

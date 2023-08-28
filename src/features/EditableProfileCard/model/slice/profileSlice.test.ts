@@ -3,8 +3,8 @@ import { Currency } from "entities/Currency"
 import { updateProfileData } from "../services/updateProfileData/updateProfileData"
 import {
   ProfileSchema,
-  ValidateProfileError,
 } from "../types/editableProfileCardSchema"
+import { ValidateProfileError } from "../consts/ValidateProfileError"
 import { profileActions, profileReducer } from "./profileSlice"
 
 const data = {

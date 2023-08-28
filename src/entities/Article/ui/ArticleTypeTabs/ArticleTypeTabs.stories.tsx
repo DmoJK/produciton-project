@@ -1,9 +1,8 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { Theme } from "app/providers/ThemeProvider"
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
 import { ArticleTypeTabs } from "./ArticleTypeTabs"
-import { ArticleType } from "../../model/types/article"
+import { ArticleType } from "../../model/consts/ArticleConsts"
 
 export default {
   title: "entities/Article/ArticleTypeTabs",
