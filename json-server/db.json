@@ -625,6 +625,12 @@
       "articleId": "6",
       "userId": "1",
       "id": "f8HlJGK"
+    },
+    {
+      "text": "science",
+      "articleId": "18",
+      "userId": "1",
+      "id": "bbr5zJZ"
     }
   ],
   "users": [
@@ -662,8 +668,8 @@
       "first": "Artem",
       "lastname": "Parkhomenko",
       "age": 20,
-      "currency": "EUR",
-      "country": "Belarus",
+      "currency": "RUB",
+      "country": "Russia",
       "city": "Moscow",
       "username": "admin",
       "avatar": "https://i.pinimg.com/564x/44/fb/59/44fb59cc166df5707146c2a59768dce1.jpg"
