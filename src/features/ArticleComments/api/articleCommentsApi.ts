@@ -1,3 +1,4 @@
+import { Comment } from "entities/Comment"
 import { rtkApi } from "shared/api/rtkApi"
 
 interface addCommentForArticleParams {
@@ -8,7 +9,7 @@ interface addCommentForArticleParams {
 
 const commentsApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    getArticleCommentsByArticleId: build.query({
+    getArticleCommentsByArticleId: build.query<Comment[], string | undefined>({
       query: (articleId) => ({
         url: "/comments",
         params: {
@@ -18,8 +19,8 @@ const commentsApi = rtkApi.injectEndpoints({
       }),
       providesTags: ["Comment"],
     }),
-    addCommentForArticle: build.mutation({
-      query: (params: addCommentForArticleParams) => ({
+    addCommentForArticle: build.mutation<null, addCommentForArticleParams>({
+      query: (params) => ({
         url: "/comments",
         method: "POST",
         body: params,
