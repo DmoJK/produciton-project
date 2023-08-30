@@ -26,6 +26,8 @@
   --listbox-z-index: 5;
   --dropdown-z-index: 5;
   --popover-z-index: 5;
+  --hidden-z-index: -1;
+  --drawer-visible-z-index: 9;
 
   /* Цвета */
   --overlay-color: rgb(0 0 0 / 60%);

@@ -1,3 +1,4 @@
+import { AnimationProvider } from "shared/lib/components/AnimationProvider"
 import { memo, useCallback, useState } from "react"
 import { BrowserView, MobileView } from "react-device-detect"
 import { classNames } from "shared/lib/classNames/classNames"
@@ -42,10 +43,11 @@ export const NotificationButton = memo(
         </BrowserView>
         <MobileView>
           {trigger}
-          <Drawer onClose={onCloseDrawer} isOpen={isOpen}>
-            <NotificationList
-            />
-          </Drawer>
+          <AnimationProvider>
+            <Drawer onClose={onCloseDrawer} isOpen={isOpen}>
+              <NotificationList />
+            </Drawer>
+          </AnimationProvider>
         </MobileView>
       </div>
     )
