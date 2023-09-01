@@ -4,11 +4,11 @@ import {
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit"
-import { userReducer } from "entities/User"
-import { scrollSaverReducer } from "widgets/Page"
 import { useDispatch } from "react-redux"
-import { $api } from "shared/api/api"
-import { rtkApi } from "shared/api/rtkApi"
+import { userReducer } from "@/entities/User"
+import { scrollSaverReducer } from "@/widgets/Page"
+import { $api } from "@/shared/api/api"
+import { rtkApi } from "@/shared/api/rtkApi"
 import { createReducerManager } from "./reducerManager"
 import { StateSchema, ThunkExtraArg } from "./StateSchema"
 

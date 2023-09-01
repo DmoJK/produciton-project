@@ -1,14 +1,14 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Theme } from "app/providers/ThemeProvider"
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Article } from "entities/Article"
+import { Theme } from "@/app/providers/ThemeProvider"
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
+import { Article } from "@/entities/Article"
 import {
   ArticleBlockType,
   ArticleSortField,
   ArticleType,
   ArticleView
-} from "entities/Article/model/consts/ArticleConsts"
+} from "@/entities/Article/model/consts/ArticleConsts"
 import { ArticlesPageSchema } from "../../model/types/ArticlesPageSchema"
 import { ArticlesInfiniteList } from "./ArticlesInfiniteList"
 

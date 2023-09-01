@@ -1,5 +1,5 @@
 /* eslint-disable react/self-closing-comp */
-import { classNames } from "shared/lib/classNames/classNames"
+import { classNames } from "@/shared/lib/classNames/classNames"
 import "./Loader.scss"
 
 interface LoaderProps {

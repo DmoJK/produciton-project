@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
-import { Text, TextTheme } from "shared/ui/Text/Text"
-import { Page } from "widgets/Page"
+import { Text, TextTheme } from "@/shared/ui/Text/Text"
+import { Page } from "@/widgets/Page"
 
 const ForbiddenPage = () => {
   const { t } = useTranslation("admin")

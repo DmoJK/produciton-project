@@ -1,12 +1,12 @@
-import { getArticleDetailsData } from "entities/Article"
 import { memo, useCallback } from "react"
 import { useTranslation } from "react-i18next"
-import { classNames } from "shared/lib/classNames/classNames"
-import { VStack } from "shared/ui/Stack"
-import { Text, TextSize, TextTheme } from "shared/ui/Text/Text"
 import { useSelector } from "react-redux"
-import { getUserAuthData } from "entities/User"
-import { CommentForm, CommentList } from "entities/Comment"
+import { getArticleDetailsData } from "@/entities/Article"
+import { classNames } from "@/shared/lib/classNames/classNames"
+import { VStack } from "@/shared/ui/Stack"
+import { Text, TextSize, TextTheme } from "@/shared/ui/Text/Text"
+import { getUserAuthData } from "@/entities/User"
+import { CommentForm, CommentList } from "@/entities/Comment"
 import {
   useAddCommentForArticle,
   useGetArticleComments,

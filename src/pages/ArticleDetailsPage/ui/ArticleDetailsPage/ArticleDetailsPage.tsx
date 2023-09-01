@@ -1,17 +1,17 @@
-import { classNames } from "shared/lib/classNames/classNames"
 import { useTranslation } from "react-i18next"
 import { memo } from "react"
-import { Page } from "widgets/Page"
 import { useParams } from "react-router-dom"
-import { ArticleDetails } from "entities/Article"
+import { Page } from "@/widgets/Page"
+import { classNames } from "@/shared/lib/classNames/classNames"
+import { ArticleDetails } from "@/entities/Article"
 import {
   DynamicModuleLoader,
   ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
-import { ArticleRecommendationsList } from "features/ArticleRecommendationsList"
-import { ArticleComments } from "features/ArticleComments"
-import { commentFormReducer } from "entities/Comment/model/slice/commentFormSlice"
-import { VStack } from "shared/ui/Stack"
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
+import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsList"
+import { ArticleComments } from "@/features/ArticleComments"
+import { commentFormReducer } from "@/entities/Comment/model/slice/commentFormSlice"
+import { VStack } from "@/shared/ui/Stack"
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader"
 
 interface ArticleDetailsPageProps {

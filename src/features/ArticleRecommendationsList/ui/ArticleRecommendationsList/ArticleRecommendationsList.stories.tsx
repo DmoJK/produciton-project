@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 import withMock from "storybook-addon-mock"
-import { Theme } from "app/providers/ThemeProvider"
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Article, ArticleBlockType, ArticleType } from "entities/Article"
+import { Theme } from "@/app/providers/ThemeProvider"
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
+import { Article, ArticleBlockType, ArticleType } from "@/entities/Article"
 import { ArticleRecommendationsList } from "./ArticleRecommendationsList"
 
 const article: Article = {

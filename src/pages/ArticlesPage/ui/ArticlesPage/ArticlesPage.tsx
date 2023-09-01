@@ -1,13 +1,13 @@
-import { classNames } from "shared/lib/classNames/classNames"
 import { useSearchParams } from "react-router-dom"
 import { memo, useCallback } from "react"
-import { Page } from "widgets/Page"
+import { classNames } from "@/shared/lib/classNames/classNames"
+import { Page } from "@/widgets/Page"
 import {
   DynamicModuleLoader,
   ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect"
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch"
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect"
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch"
 import cls from "./ArticlesPage.module.scss"
 import { articlesPageReducer } from "../../model/slice/articlesPageSlice"
 import { fetchNextArticlesList } from "../../model/services/fetchNextArticlesList/fetchNextArticlesList"
