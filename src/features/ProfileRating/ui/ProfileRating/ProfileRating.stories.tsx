@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
+import withMock from "storybook-addon-mock"
 import { Theme } from "@/app/providers/ThemeProvider"
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
@@ -10,6 +11,13 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
+  decorators: [
+    StoreDecorator({
+      user: { authData: { id: "1" } },
+      profile: { data: { id: "1" } },
+    }),
+    withMock,
+  ],
 } as ComponentMeta<typeof ProfileRating>
 
 const Template: ComponentStory<typeof ProfileRating> = (args) => (
@@ -17,8 +25,31 @@ const Template: ComponentStory<typeof ProfileRating> = (args) => (
 )
 
 export const Primary = Template.bind({})
-Primary.args = {}
+Primary.args = {
+  profileId: "1",
+}
+Primary.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/profile-ratings?profileId=1&userId=1`,
+      method: "GET",
+      status: 200,
+      response: [{ rate: 4 }],
+    },
+  ],
+}
 
-export const Dark = Template.bind({})
-Dark.args = {}
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+export const WithoutRate = Template.bind({})
+WithoutRate.args = {
+  profileId: "1",
+}
+WithoutRate.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/profile-ratings?profileId=1&userId=1`,
+      method: "GET",
+      status: 200,
+      response: [],
+    },
+  ],
+}
