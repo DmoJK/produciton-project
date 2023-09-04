@@ -1,5 +1,4 @@
 import { ReactNode, memo } from "react"
-import { useTranslation } from "react-i18next"
 import { Popover as HPopover } from "@headlessui/react"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { DropdownDirection } from "@/shared/types/ui"
@@ -21,7 +20,6 @@ export const Popover = memo(
     children,
     direction = "bottom-right",
   }: PopoverProps) => {
-    const { t } = useTranslation()
     const panelClasses = [mapDirectionClass[direction]]
 
     return (
