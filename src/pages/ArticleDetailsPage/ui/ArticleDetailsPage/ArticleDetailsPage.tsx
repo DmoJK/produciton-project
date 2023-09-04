@@ -10,7 +10,7 @@ import {
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsList"
 import { ArticleComments } from "@/features/ArticleComments"
-import { commentFormReducer } from "@/entities/Comment/model/slice/commentFormSlice"
+import { commentFormReducer } from "@/entities/Comment"
 import { VStack } from "@/shared/ui/Stack"
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader"
 import { ArticleRating } from "@/features/ArticleRating"

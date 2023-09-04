@@ -56,6 +56,7 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     "react/no-array-index-key": "warn",
     "dmojk-plugin/path-checker": ["error", { alias: "@" }],
+    "dmojk-plugin/public-api-imports-checker": ["error", { alias: "@" }],
   },
   globals: {
     __IS_DEV__: true,

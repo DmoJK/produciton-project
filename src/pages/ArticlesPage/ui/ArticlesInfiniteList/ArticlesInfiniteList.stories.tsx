@@ -2,13 +2,13 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { Theme } from "@/app/providers/ThemeProvider"
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Article } from "@/entities/Article"
 import {
   ArticleBlockType,
   ArticleSortField,
   ArticleType,
-  ArticleView
-} from "@/entities/Article/model/consts/ArticleConsts"
+  ArticleView,
+  Article,
+} from "@/entities/Article"
 import { ArticlesPageSchema } from "../../model/types/ArticlesPageSchema"
 import { ArticlesInfiniteList } from "./ArticlesInfiniteList"
 
@@ -54,7 +54,12 @@ const article: Article = {
 
 const articlesPage: ArticlesPageSchema = {
   ids: [1],
-  entities: { 1: {...article, id: "1"}, 2: {...article, id: "2"}, 3: {...article, id: "3"}, 4: {...article, id: "4"}, },
+  entities: {
+    1: { ...article, id: "1" },
+    2: { ...article, id: "2" },
+    3: { ...article, id: "3" },
+    4: { ...article, id: "4" },
+  },
   page: 1,
   limit: 4,
   hasMore: false,
