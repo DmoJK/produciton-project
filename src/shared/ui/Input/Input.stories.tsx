@@ -44,3 +44,10 @@ PlaceholderInline.args = {
   value: "123123",
   placeholderInline: true,
 }
+
+export const FullWidth = Template.bind({})
+FullWidth.args = {
+  placeholder: "Type text",
+  value: "123123",
+  fullWidth: true,
+}

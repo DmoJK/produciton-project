@@ -50,7 +50,7 @@ export const ListBox = memo(
           onChange={onChange}
           disabled={readonly}
         >
-          <HListbox.Button disabled={readonly} className={popupStyle.trigger}>
+          <HListbox.Button as="div" className={popupStyle.trigger}>
             <Button disabled={readonly}>{value ?? defaultValue}</Button>
           </HListbox.Button>
           <HListbox.Options

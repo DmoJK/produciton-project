@@ -28,21 +28,21 @@ export const OutlineSizeS = Template.bind({})
 OutlineSizeS.args = {
   children: "Outline",
   theme: ButtonTheme.OUTLINE,
-  size: ButtonSize.S
+  size: ButtonSize.S,
 }
 
 export const OutlineSizeL = Template.bind({})
 OutlineSizeL.args = {
   children: "Outline",
   theme: ButtonTheme.OUTLINE,
-  size: ButtonSize.L
+  size: ButtonSize.L,
 }
 
 export const OutlineSizeXL = Template.bind({})
 OutlineSizeXL.args = {
   children: "Outline",
   theme: ButtonTheme.OUTLINE,
-  size: ButtonSize.XL
+  size: ButtonSize.XL,
 }
 
 export const OutlineDark = Template.bind({})
@@ -112,4 +112,10 @@ Disabled.args = {
   children: ">",
   theme: ButtonTheme.BACKGROUND_INVERTED,
   disabled: true,
+}
+
+export const FullWidth = Template.bind({})
+FullWidth.args = {
+  children: "Text",
+  fullWidth: true,
 }

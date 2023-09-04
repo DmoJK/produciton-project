@@ -14,6 +14,7 @@ interface InputProps extends HTMLInputProps {
   placeholderInline?: boolean
   autofocus?: boolean
   readonly?: boolean
+  fullWidth?: boolean
 }
 
 export const Input = memo(
@@ -26,6 +27,7 @@ export const Input = memo(
     placeholderInline = false,
     autofocus = false,
     readonly,
+    fullWidth,
     ...otherProps
   }: InputProps) => {
     const ref = useRef<HTMLInputElement>(null)
@@ -41,9 +43,10 @@ export const Input = memo(
 
     const mods: Mods = {
       [cls.placeholderInline]: placeholderInline,
-      [cls.readonly]: readonly
+      [cls.readonly]: readonly,
+      [cls.fullWidth]: fullWidth,
     }
-    
+
     return (
       <div className={classNames(cls.Input, mods, [className])}>
         {placeholder && <div className={cls.placeholder}>{placeholder}</div>}
