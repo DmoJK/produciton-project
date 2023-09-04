@@ -1,8 +1,6 @@
 import { memo, useCallback, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { BrowserView, MobileView } from "react-device-detect"
-import { classNames } from "@/shared/lib/classNames/classNames"
-import cls from "./RatingCard.module.scss"
 import { StarRating } from "@/shared/ui/StarRating/StarRating"
 import { Card } from "@/shared/ui/Card/Card"
 import { HStack, VStack } from "@/shared/ui/Stack"
@@ -14,6 +12,7 @@ import { Drawer } from "@/shared/ui/Drawer/Drawer"
 
 interface RatingCardProps {
   className?: string
+  rate?: number
   title?: string
   feedbackTitle?: string
   onCancel?: (starsCount: number) => void
@@ -27,11 +26,12 @@ export const RatingCard = memo(
     onAccept,
     onCancel,
     title,
+    rate = 0,
   }: RatingCardProps) => {
     const { t } = useTranslation("")
     const hasFeedback = Boolean(feedbackTitle)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [starsCount, setStarsCount] = useState(0)
+    const [starsCount, setStarsCount] = useState(rate)
     const [feedback, setFeedback] = useState("")
 
     const onSelectStars = useCallback(
@@ -69,10 +69,10 @@ export const RatingCard = memo(
     )
 
     return (
-      <Card className={classNames(cls.RatingCard, {}, [className])}>
+      <Card max className={className}>
         <VStack gap="8" max align="center">
           <Text title={title} />
-          <StarRating size={50} onSelect={onSelectStars} />
+          <StarRating selectedStars={starsCount} size={50} onSelect={onSelectStars} />
         </VStack>
         {hasFeedback ? (
           <>

@@ -2,32 +2,23 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { Theme } from "@/app/providers/ThemeProvider"
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Card } from "./Card"
-import { Text } from "../Text/Text"
+import ProfileRating from "./ProfileRating"
 
 export default {
-  title: "shared/Card",
-  component: Card,
+  title: "features/ProfileRating",
+  component: ProfileRating,
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof Card>
+} as ComponentMeta<typeof ProfileRating>
 
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />
+const Template: ComponentStory<typeof ProfileRating> = (args) => (
+  <ProfileRating {...args} />
+)
 
 export const Primary = Template.bind({})
-Primary.args = {
-  children: <Text title="TITLE" text="text" />,
-}
-
-export const Max = Template.bind({})
-Max.args = {
-  children: <Text title="TITLE" text="text" />,
-  max: true,
-}
+Primary.args = {}
 
 export const Dark = Template.bind({})
-Dark.args = {
-  children: <Text title="TITLE" text="text" />,
-}
+Dark.args = {}
 Dark.decorators = [ThemeDecorator(Theme.DARK)]

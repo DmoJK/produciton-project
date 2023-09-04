@@ -12,3 +12,8 @@ export interface Profile {
   username?: string
   avatar?: string
 }
+
+export interface ProfileRate {
+  rate: number
+  feedback?: string
+}
