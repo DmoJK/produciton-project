@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next"
 import { memo } from "react"
 import { useParams } from "react-router-dom"
 import { Page } from "@/widgets/Page"
@@ -24,7 +23,6 @@ const reducers: ReducersList = {
 }
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-  const { t } = useTranslation("article")
   const { id } = useParams<{ id: string }>()
 
   return (
