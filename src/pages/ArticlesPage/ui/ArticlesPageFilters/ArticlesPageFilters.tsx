@@ -12,9 +12,9 @@ import {
   ArticleView,
 } from "@/entities/Article"
 import { SortOrder } from "@/shared/types"
-import { Input } from "@/shared/ui/Input/Input"
-import { Card } from "@/shared/ui/Card/Card"
-import { TabItem, Tabs } from "@/shared/ui/Tabs/Tabs"
+import { Input } from "@/shared/ui/Input"
+import { Card } from "@/shared/ui/Card"
+import { TabItem, Tabs } from "@/shared/ui/Tabs"
 import { useDebounce } from "@/shared/lib/hooks/useDebounce"
 import cls from "./ArticlesPageFilters.module.scss"
 import { articlesPageActions } from "../../model/slice/articlesPageSlice"

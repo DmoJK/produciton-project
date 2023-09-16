@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import { getArticleDetailsData } from "@/entities/Article"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { VStack } from "@/shared/ui/Stack"
-import { Text, TextSize, TextTheme } from "@/shared/ui/Text/Text"
+import { Text, TextSize, TextTheme } from "@/shared/ui/Text"
 import { getUserAuthData } from "@/entities/User"
 import { CommentForm, CommentList } from "@/entities/Comment"
 import {

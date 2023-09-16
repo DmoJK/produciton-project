@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { VStack } from "@/shared/ui/Stack"
-import { Text } from "@/shared/ui/Text/Text"
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton"
+import { Text } from "@/shared/ui/Text"
+import { Skeleton } from "@/shared/ui/Skeleton"
 import { useGetNotifications } from "../../api/notificationApi"
 import { NotificationItem } from "../NotificationItem/NotificationItem"
 
