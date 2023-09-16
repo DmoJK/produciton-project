@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
+
 import { CurrencySelect } from "./CurrencySelect"
 import { Currency } from "../../model/types/Currency"
 

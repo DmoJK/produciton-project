@@ -1,14 +1,18 @@
 import { Fragment, ReactNode, memo } from "react"
+
 import { Listbox as HListbox } from "@headlessui/react"
-import { classNames } from "@/shared/lib/classNames/classNames"
+
 import SelectSvg from "@/shared/assets/icons/done.svg"
-import { HStack } from "../../../Stack"
-import { Icon } from "../../../Icon/Icon"
-import { Button } from "../../../Button/Button"
-import { DropdownDirection } from "../../../../types/ui"
+import { classNames } from "@/shared/lib/classNames/classNames"
+
 import cls from "./ListBox.module.scss"
-import popupStyle from "../../styles/Popups.module.scss"
+
+import { DropdownDirection } from "../../../../types/ui"
+import { Button } from "../../../Button/Button"
+import { Icon } from "../../../Icon/Icon"
+import { HStack } from "../../../Stack"
 import { mapDirectionClass } from "../../styles/mapClasses"
+import popupStyle from "../../styles/Popups.module.scss"
 
 interface ListBoxItem {
   value: string

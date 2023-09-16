@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom"
-import { Page } from "@/widgets/Page"
+
 import { EditableProfileCard } from "@/features/EditableProfileCard"
-import { VStack } from "@/shared/ui/Stack"
-import { classNames } from "@/shared/lib/classNames/classNames"
 import { ProfileRating } from "@/features/ProfileRating"
+import { classNames } from "@/shared/lib/classNames/classNames"
+import { VStack } from "@/shared/ui/Stack"
+import { Page } from "@/widgets/Page"
 
 interface ProfilePageProps {
   className?: string

@@ -1,7 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { Theme } from "@/shared/const/theme"
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
+
 import {
   ArticleBlockType,
   ArticleSortField,
@@ -9,8 +7,12 @@ import {
   ArticleView,
   Article,
 } from "@/entities/Article"
-import { ArticlesPageSchema } from "../../model/types/ArticlesPageSchema"
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
+import { Theme } from "@/shared/const/theme"
+
 import { ArticlesInfiniteList } from "./ArticlesInfiniteList"
+import { ArticlesPageSchema } from "../../model/types/ArticlesPageSchema"
 
 const article: Article = {
   id: "1",

@@ -1,6 +1,8 @@
 /* eslint-disable no-param-reassign */
 import path from "path"
+
 import webpack, { DefinePlugin, RuleSetRule } from "webpack"
+
 import { buildCssLoader } from "../build/loaders/buildCssLoader"
 import { buildSvgLoader } from "../build/loaders/buildSvgLoader"
 import { BuildPaths } from "../build/types/config"

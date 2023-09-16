@@ -24,6 +24,8 @@ module.exports = {
     "i18next",
     "react-hooks",
     "dmojk-plugin",
+    "unused-imports",
+    "import",
   ],
   rules: {
     "react/jsx-filename-extension": [
@@ -31,6 +33,7 @@ module.exports = {
       { extensions: [".js", ".jsx", ".tsx"] },
     ],
     "import/no-unresolved": "off",
+    "unused-imports/no-unused-imports": "error",
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": "off",
@@ -68,6 +71,35 @@ module.exports = {
       {
         alias: "@",
         testFiles: ["**/*.test.*", "**/StoreDecorator.tsx", "**/*.story.*"],
+      },
+    ],
+    "import/order": [
+      "error",
+      {
+        groups: ["builtin", "external", "internal"],
+        pathGroups: [
+          {
+            pattern: "react",
+            group: "external",
+            position: "before",
+          },
+          {
+            pattern: "@/**",
+            group: "external",
+            position: "after",
+          },
+          {
+            pattern: "./**.module.*",
+            group: "internal",
+            position: "after",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["react"],
+        "newlines-between": "always",
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
       },
     ],
   },

@@ -1,15 +1,19 @@
 import { memo } from "react"
+
 import { useTranslation } from "react-i18next"
-import { classNames, Mods } from "@/shared/lib/classNames/classNames"
-import { Input } from "@/shared/ui/Input"
-import { Text, TextAlign, TextTheme } from "@/shared/ui/Text"
-import { Loader } from "@/shared/ui/Loader"
-import { Avatar } from "@/shared/ui/Avatar"
-import { Currency, CurrencySelect } from "@/entities/Currency"
+
 import { Country, CountrySelect } from "@/entities/Country"
+import { Currency, CurrencySelect } from "@/entities/Currency"
+import { classNames, Mods } from "@/shared/lib/classNames/classNames"
+import { Avatar } from "@/shared/ui/Avatar"
+import { Input } from "@/shared/ui/Input"
+import { Loader } from "@/shared/ui/Loader"
 import { HStack, VStack } from "@/shared/ui/Stack"
-import { Profile } from "../../model/types/Profile"
+import { Text, TextAlign, TextTheme } from "@/shared/ui/Text"
+
 import cls from "./ProfileCard.module.scss"
+
+import { Profile } from "../../model/types/Profile"
 
 interface ProfileCardProps {
   className?: string

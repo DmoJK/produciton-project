@@ -1,12 +1,15 @@
 import { memo, useCallback } from "react"
+
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
+
 import { getArticleDetailsData } from "@/entities/Article"
+import { CommentForm, CommentList } from "@/entities/Comment"
+import { getUserAuthData } from "@/entities/User"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { VStack } from "@/shared/ui/Stack"
 import { Text, TextSize, TextTheme } from "@/shared/ui/Text"
-import { getUserAuthData } from "@/entities/User"
-import { CommentForm, CommentList } from "@/entities/Comment"
+
 import {
   useAddCommentForArticle,
   useGetArticleComments,

@@ -1,19 +1,23 @@
-import { useSearchParams } from "react-router-dom"
 import { memo, useCallback } from "react"
+
+import { useSearchParams } from "react-router-dom"
+
 import { classNames } from "@/shared/lib/classNames/classNames"
-import { Page } from "@/widgets/Page"
 import {
   DynamicModuleLoader,
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
-import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect"
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch"
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect"
+import { Page } from "@/widgets/Page"
+
 import cls from "./ArticlesPage.module.scss"
-import { articlesPageReducer } from "../../model/slice/articlesPageSlice"
+
 import { fetchNextArticlesList } from "../../model/services/fetchNextArticlesList/fetchNextArticlesList"
-import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters"
-import { ArticlesInfiniteList } from "../ArticlesInfiniteList/ArticlesInfiniteList"
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage"
+import { articlesPageReducer } from "../../model/slice/articlesPageSlice"
+import { ArticlesInfiniteList } from "../ArticlesInfiniteList/ArticlesInfiniteList"
+import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters"
 
 interface ArticlesPageProps {
   className?: string

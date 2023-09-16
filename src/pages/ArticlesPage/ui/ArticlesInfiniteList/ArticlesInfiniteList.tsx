@@ -1,7 +1,10 @@
 import { memo } from "react"
+
 import { useSelector } from "react-redux"
-import { Text, TextTheme } from "@/shared/ui/Text"
+
 import { ArticleList } from "@/entities/Article"
+import { Text, TextTheme } from "@/shared/ui/Text"
+
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
