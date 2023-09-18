@@ -1,10 +1,10 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
+import { ArticleType } from "@/entities/Article"
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
 import { Theme } from "@/shared/const/theme"
 
 import { ArticleTypeTabs } from "./ArticleTypeTabs"
-import { ArticleType } from "../../model/consts/ArticleConsts"
 
 export default {
   title: "entities/Article/ArticleTypeTabs",

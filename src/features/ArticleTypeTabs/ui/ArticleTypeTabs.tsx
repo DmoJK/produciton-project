@@ -2,10 +2,10 @@ import { memo, useCallback, useMemo } from "react"
 
 import { useTranslation } from "react-i18next"
 
+import { ArticleType } from "@/entities/Article"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { TabItem, Tabs } from "@/shared/ui/Tabs"
 
-import { ArticleType } from "../../model/consts/ArticleConsts"
 
 interface ArticleTypeTabsProps {
   className?: string
@@ -51,7 +51,7 @@ export const ArticleTypeTabs = memo(
         tabs={typeTabs}
         onTabClick={onTabClick}
         value={value}
-        className={classNames('', {}, [className])}
+        className={classNames("", {}, [className])}
       />
     )
   }
