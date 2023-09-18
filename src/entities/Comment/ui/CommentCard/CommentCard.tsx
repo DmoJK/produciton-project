@@ -1,6 +1,6 @@
 import { memo } from "react"
 
-import { RoutePath } from "@/shared/const/router"
+import { routes } from "@/shared/const/router"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { AppLink } from "@/shared/ui/AppLink"
 import { Avatar } from "@/shared/ui/Avatar"
@@ -22,7 +22,11 @@ export const CommentCard = memo(
   ({ className, isLoading, comment }: CommentCardProps) => {
     if (isLoading) {
       return (
-        <VStack max gap="8" className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
+        <VStack
+          max
+          gap="8"
+          className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+        >
           <div className={cls.header}>
             <Skeleton width={30} height={30} border="50%" />
             <Skeleton height={16} width={100} className={cls.username} />
@@ -32,16 +36,17 @@ export const CommentCard = memo(
       )
     }
 
-    if(!comment) {
+    if (!comment) {
       return null
     }
 
     return (
-      <VStack max gap="8" className={classNames(cls.CommentCard, {}, [className])}>
-        <AppLink
-          to={`${RoutePath.profile}${comment.user.id}`}
-          className={cls.header}
-        >
+      <VStack
+        max
+        gap="8"
+        className={classNames(cls.CommentCard, {}, [className])}
+      >
+        <AppLink to={routes.PROFILE(comment.user.id)} className={cls.header}>
           {comment.user.avatar ? (
             <Avatar size={30} src={comment.user.avatar} />
           ) : null}

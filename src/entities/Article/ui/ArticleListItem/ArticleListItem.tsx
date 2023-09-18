@@ -3,7 +3,7 @@ import { HTMLAttributeAnchorTarget, memo } from "react"
 import { useTranslation } from "react-i18next"
 
 import EyeIcon from "@/shared/assets/icons/eye.svg"
-import { RoutePath } from "@/shared/const/router"
+import { routes } from "@/shared/const/router"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { AppLink } from "@/shared/ui/AppLink"
 import { Avatar } from "@/shared/ui/Avatar"
@@ -15,10 +15,7 @@ import { Text } from "@/shared/ui/Text"
 import cls from "./ArticleListItem.module.scss"
 
 import { ArticleBlockType, ArticleView } from "../../model/consts/ArticleConsts"
-import {
-  Article,
-  ArticleTextBlock,
-} from "../../model/types/article"
+import { Article, ArticleTextBlock } from "../../model/types/article"
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent"
 
 interface ArticleListItemProps {
@@ -68,7 +65,7 @@ export const ArticleListItem = memo(
               />
             )}
             <div className={cls.footer}>
-              <AppLink to={RoutePath.article_details + article.id}>
+              <AppLink to={routes.ARTICLE_DETAILS(article.id)}>
                 <Button theme={ButtonTheme.OUTLINE}>
                   {t("Читать далее...")}
                 </Button>
@@ -83,7 +80,7 @@ export const ArticleListItem = memo(
     return (
       <AppLink
         target={target}
-        to={RoutePath.article_details + article.id}
+        to={routes.ARTICLE_DETAILS(article.id)}
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
         <Card className={cls.card}>

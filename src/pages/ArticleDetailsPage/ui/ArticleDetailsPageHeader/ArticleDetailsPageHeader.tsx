@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
 import { getArticleDetailsData } from "@/entities/Article"
-import { RoutePath } from "@/shared/const/router"
+import { routes } from "@/shared/const/router"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { Button, ButtonTheme } from "@/shared/ui/Button"
 import { HStack } from "@/shared/ui/Stack"
@@ -24,27 +24,22 @@ export const ArticleDetailsPageHeader = memo(
     const article = useSelector(getArticleDetailsData)
 
     const onBackToArticles = useCallback(() => {
-      navigate(RoutePath.articles)
+      navigate(routes.ARTICLES())
     }, [navigate])
 
     const onEditArticle = useCallback(() => {
-      navigate(`${RoutePath.article_details}${article?.id}/edit`)
-    }, [article?.id, navigate])
+      if (article) {
+        navigate(routes.ARTICLE_EDIT(article.id))
+      }
+    }, [article, navigate])
 
     return (
-      <HStack
-        max
-        justify="between"
-        className={classNames("", {}, [className])}
-      >
+      <HStack max justify="between" className={classNames("", {}, [className])}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToArticles}>
           {t("Назад к статьям")}
         </Button>
         {canEdit && (
-          <Button
-            theme={ButtonTheme.OUTLINE}
-            onClick={onEditArticle}
-          >
+          <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle}>
             {t("Редактировать")}
           </Button>
         )}

@@ -7,7 +7,7 @@ import { getUserAuthData } from "@/entities/User"
 import { LoginModal } from "@/features/AuthByUsername"
 import { AvatarDropdown } from "@/features/AvatarDropdown"
 import { NotificationButton } from "@/features/NotificationButton"
-import { RoutePath } from "@/shared/const/router"
+import { routes } from "@/shared/const/router"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink"
 import { Button, ButtonTheme } from "@/shared/ui/Button"
@@ -41,7 +41,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           theme={TextTheme.INVERTED}
           title={t("The ecclesia")}
         />
-        <AppLink to={RoutePath.article_create} theme={AppLinkTheme.INVERTED}>
+        <AppLink to={routes.ARTICLE_CREATE()} theme={AppLinkTheme.INVERTED}>
           {t("Создать статью")}
         </AppLink>
         <HStack className={cls.links} gap="16">
