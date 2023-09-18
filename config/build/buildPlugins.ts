@@ -21,22 +21,10 @@ export function buildPlugins({
       template: paths.html,
     }),
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash:8].css",
-      chunkFilename: "css/[name].[contenthash:8].css",
-    }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
-    }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: paths.locales,
-          to: paths.buildLocales,
-        },
-      ],
     }),
     new CircularDependencyPlugin({
       exclude: /node_modules/,
@@ -54,5 +42,19 @@ export function buildPlugins({
     isDev && new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshWebpackPlugin({ overlay: false }), // overlay: false стоит чтобы увидеть PageError
     isDev && new BundleAnalyzerPlugin({ openAnalyzer: false }),
+    !isDev &&
+      new MiniCssExtractPlugin({
+        filename: "css/[name].[contenthash:8].css",
+        chunkFilename: "css/[name].[contenthash:8].css",
+      }),
+    !isDev &&
+      new CopyPlugin({
+        patterns: [
+          {
+            from: paths.locales,
+            to: paths.buildLocales,
+          },
+        ],
+      }),
   ].filter(Boolean)
 }
