@@ -12,6 +12,14 @@ interface useModalProps {
   animationDelay?: number
 }
 
+/**
+ * Переиспользуемый хук для модальных компонентов (drawer/modal)
+ * @param animationDelay - задрежка анимации
+ * @param onClose - колбэк, срабатывающий при закрытии модального окна
+ * @param isOpen - состояние, отвечающие за то, открыта модальное окно или нет
+ * @returns 
+ */
+
 export function useModal({
   animationDelay,
   isOpen,
