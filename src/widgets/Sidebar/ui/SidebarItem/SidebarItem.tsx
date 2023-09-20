@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next"
-import { useSelector } from "react-redux"
 
-import { getUserAuthData } from "@/entities/User"
+import { useUserAuthData } from "@/entities/User"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink"
 
@@ -16,7 +15,7 @@ interface SidebarItemProps {
 
 export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
   const { t } = useTranslation()
-  const isAuth = useSelector(getUserAuthData)
+  const isAuth = useUserAuthData()
 
   if (item.authOnly && !isAuth) {
     return null

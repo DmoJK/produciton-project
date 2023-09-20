@@ -1,8 +1,6 @@
 import { Suspense, useEffect } from "react"
 
-import { useDispatch, useSelector } from "react-redux"
-
-import { getUserInited, userActions } from "@/entities/User"
+import { useUserInited, useUserActions } from "@/entities/User"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { Navbar } from "@/widgets/Navbar"
 import { Sidebar } from "@/widgets/Sidebar"
@@ -10,12 +8,12 @@ import { Sidebar } from "@/widgets/Sidebar"
 import { AppRouter } from "./providers/router"
 
 export const App = () => {
-  const dispatch = useDispatch()
-  const inited = useSelector(getUserInited)
+  const { initAuthData } = useUserActions()
+  const inited = useUserInited()
 
   useEffect(() => {
-    dispatch(userActions.initAuthData())
-  }, [dispatch])
+    initAuthData()
+  }, [initAuthData])
 
   return (
     <div className={classNames("app", {}, [])}>

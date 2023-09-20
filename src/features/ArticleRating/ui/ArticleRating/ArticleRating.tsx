@@ -1,10 +1,9 @@
 import { memo, useCallback } from "react"
 
 import { useTranslation } from "react-i18next"
-import { useSelector } from "react-redux"
 
 import { RatingCard } from "@/entities/Rating"
-import { getUserAuthData } from "@/entities/User"
+import { useUserAuthData } from "@/entities/User"
 import { Skeleton } from "@/shared/ui/Skeleton"
 
 import { useGetArticleRating, useRateArticle } from "../../api/articleRatingApi"
@@ -16,7 +15,7 @@ export interface ArticleRatingProps {
 
 const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
   const { t } = useTranslation()
-  const userData = useSelector(getUserAuthData)
+  const userData = useUserAuthData()
   const {
     data,
     isLoading,

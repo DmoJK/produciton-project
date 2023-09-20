@@ -4,10 +4,10 @@ import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 
 import {
-  getUserAuthData,
   isUserAdmin,
   isUserManager,
   userActions,
+  useUserAuthData,
 } from "@/entities/User"
 import { routes } from "@/shared/const/router"
 import { classNames } from "@/shared/lib/classNames/classNames"
@@ -22,7 +22,7 @@ interface AvatarDropdownProps {
 export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
-  const authData = useSelector(getUserAuthData)
+  const authData = useUserAuthData()
   const isAdmin = useSelector(isUserAdmin)
   const isManager = useSelector(isUserManager)
   const isAdminPanelAvailable = isAdmin || isManager

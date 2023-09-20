@@ -18,10 +18,6 @@ export const NotificationList = ({ className }: NotificationListProps) => {
     pollingInterval: 5000,
   })
 
-  if (error || !data) {
-    return <Text title={t("Произошла ошибка при загрузке уведомлений")} />
-  }
-
   if (isLoading) {
     return (
       <VStack gap="8" max className={classNames("", {}, [className])}>
@@ -32,6 +28,10 @@ export const NotificationList = ({ className }: NotificationListProps) => {
     )
   }
 
+  if (error || !data) {
+    return <Text title={t("Произошла ошибка при загрузке уведомлений")} />
+  }
+  
   return (
     <VStack gap="8" max className={classNames("", {}, [className])}>
       {data.map((item) => (

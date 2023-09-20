@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 
 import { RatingCard } from "@/entities/Rating"
-import { getUserAuthData } from "@/entities/User"
+import { useUserAuthData } from "@/entities/User"
 import { Skeleton } from "@/shared/ui/Skeleton"
 
 import { useGetProfileRating, useRateProfile } from "../../api/profileRatingApi"
@@ -18,7 +18,7 @@ export interface ProfileRatingProps {
 const ProfileRating = memo(({ className, profileId }: ProfileRatingProps) => {
   const { t } = useTranslation()
   const isProfileExist = useSelector(getProfileExist)
-  const userData = useSelector(getUserAuthData)
+  const userData = useUserAuthData()
   const {
     data,
     isLoading,
@@ -55,7 +55,7 @@ const ProfileRating = memo(({ className, profileId }: ProfileRatingProps) => {
     [handleRate]
   )
 
-  if(!isProfileExist) {
+  if (!isProfileExist) {
     return null
   }
 

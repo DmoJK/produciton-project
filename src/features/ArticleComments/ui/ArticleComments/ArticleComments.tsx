@@ -1,11 +1,10 @@
 import { memo, useCallback } from "react"
 
 import { useTranslation } from "react-i18next"
-import { useSelector } from "react-redux"
 
-import { getArticleDetailsData } from "@/entities/Article"
+import { useArticleDetailsData } from "@/entities/Article"
 import { CommentForm, CommentList } from "@/entities/Comment"
-import { getUserAuthData } from "@/entities/User"
+import { useUserAuthData } from "@/entities/User"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { VStack } from "@/shared/ui/Stack"
 import { Text, TextSize, TextTheme } from "@/shared/ui/Text"
@@ -31,8 +30,8 @@ export const ArticleComments = memo(
     const [addComment, { isLoading: isLoadingAddComment }] =
       useAddCommentForArticle()
 
-    const user = useSelector(getUserAuthData)
-    const article = useSelector(getArticleDetailsData)
+    const user = useUserAuthData()
+    const article = useArticleDetailsData()
 
     const onSendComment = useCallback(
       (text: string) => {

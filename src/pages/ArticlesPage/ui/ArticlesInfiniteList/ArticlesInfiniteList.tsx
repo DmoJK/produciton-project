@@ -6,9 +6,9 @@ import { ArticleList } from "@/entities/Article"
 import { Text, TextTheme } from "@/shared/ui/Text"
 
 import {
-  getArticlesPageError,
-  getArticlesPageIsLoading,
-  getArticlesPageIsView,
+  useArticlesPageError,
+  useArticlesPageIsLoading,
+  useArticlesPageIsView,
 } from "../../model/selectors/articlesPageSelector"
 import { getArticles } from "../../model/slice/articlesPageSlice"
 
@@ -19,9 +19,9 @@ interface ArticlesInfiniteListProps {
 export const ArticlesInfiniteList = memo(
   ({ className }: ArticlesInfiniteListProps) => {
     const articles = useSelector(getArticles.selectAll)
-    const isLoading = useSelector(getArticlesPageIsLoading)
-    const error = useSelector(getArticlesPageError)
-    const view = useSelector(getArticlesPageIsView)
+    const isLoading = useArticlesPageIsLoading()
+    const error = useArticlesPageError()
+    const view = useArticlesPageIsView()
 
     if (error) {
       return <Text theme={TextTheme.ERROR} title="Something went wrong" />

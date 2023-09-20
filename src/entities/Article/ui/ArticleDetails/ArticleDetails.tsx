@@ -1,7 +1,6 @@
 import { memo, useCallback } from "react"
 
 import { useTranslation } from "react-i18next"
-import { useSelector } from "react-redux"
 
 import CalendarIcon from "@/shared/assets/icons/calendar.svg"
 import EyeIcon from "@/shared/assets/icons/eye.svg"
@@ -22,10 +21,10 @@ import cls from "./ArticleDetails.module.scss"
 
 import { ArticleBlockType } from "../../model/consts/ArticleConsts"
 import {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsIsLoading,
-} from "../../model/selectors/articleDetails"
+  useArticleDetailsData,
+  useArticleDetailsIsLoading,
+  useArticleDetailsError,
+} from "../../model/selectors/articleDetailsSelectors"
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById"
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice"
 import { ArticleBlock } from "../../model/types/article"
@@ -46,9 +45,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const { t } = useTranslation("article")
   const dispatch = useAppDispatch()
 
-  const isLoading = useSelector(getArticleDetailsIsLoading)
-  const article = useSelector(getArticleDetailsData)
-  const error = useSelector(getArticleDetailsError)
+  const isLoading = useArticleDetailsIsLoading()
+  const article = useArticleDetailsData()
+  const error = useArticleDetailsError()
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {

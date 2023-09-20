@@ -671,6 +671,24 @@
       "articleId": "4",
       "userId": "1",
       "id": "vXUEkMR"
+    },
+    {
+      "text": "comment number million",
+      "articleId": "7",
+      "userId": "1",
+      "id": "e8jLc2Q"
+    },
+    {
+      "text": "TS the best",
+      "articleId": "8",
+      "userId": "1",
+      "id": "4HvlLvV"
+    },
+    {
+      "text": "!!!",
+      "articleId": "8",
+      "userId": "1",
+      "id": "QW3GrPE"
     }
   ],
   "users": [
@@ -710,7 +728,7 @@
       "age": 20,
       "currency": "RUB",
       "country": "Russia",
-      "city": "Moscow",
+      "city": "Tver",
       "username": "admin",
       "avatar": "https://i.pinimg.com/564x/44/fb/59/44fb59cc166df5707146c2a59768dce1.jpg"
     },
@@ -774,6 +792,12 @@
       "rate": 3,
       "feedback": "what is it?!",
       "id": "Yj22693"
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "rate": 5,
+      "id": "JcYFHDu"
     }
   ],
   "profile-ratings": [

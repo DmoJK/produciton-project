@@ -1,19 +1,20 @@
 import { memo, useCallback } from "react"
 
 import { useTranslation } from "react-i18next"
-import { useSelector } from "react-redux"
 
-import { getUserAuthData } from "@/entities/User"
+import { useUserAuthData } from "@/entities/User"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch"
 import { Button, ButtonTheme } from "@/shared/ui/Button"
 import { HStack } from "@/shared/ui/Stack"
 import { Text } from "@/shared/ui/Text"
 
-import { getProfileData } from "../../model/selectors/getProfileData/getProfileData"
-import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly"
+import {
+  useProfileData,
+  useProfileReadonly,
+} from "../../model/selectors/profileSelectors"
 import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData"
-import { profileActions } from "../../model/slice/profileSlice"
+import { useProfileActions } from "../../model/slice/profileSlice"
 
 interface EditableProfileCardHeaderProps {
   className?: string
@@ -24,19 +25,20 @@ export const EditableProfileCardHeader = memo(
     const { className } = props
 
     const { t } = useTranslation("profile")
-    const authData = useSelector(getUserAuthData)
-    const profileData = useSelector(getProfileData)
+    const { setReadonly, cancelEdit } = useProfileActions()
+    const authData = useUserAuthData()
+    const profileData = useProfileData()
     const canEdit = authData?.id === profileData?.id
-    const readonly = useSelector(getProfileReadonly)
+    const readonly = useProfileReadonly()
     const dispatch = useAppDispatch()
 
     const onEdit = useCallback(() => {
-      dispatch(profileActions.setReadonly(false))
-    }, [dispatch])
+      setReadonly(false)
+    }, [setReadonly])
 
     const onCancelEdit = useCallback(() => {
-      dispatch(profileActions.cancelEdit())
-    }, [dispatch])
+      cancelEdit()
+    }, [cancelEdit])
 
     const onSave = useCallback(() => {
       dispatch(updateProfileData())

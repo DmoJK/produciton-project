@@ -1,4 +1,6 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { PayloadAction } from "@reduxjs/toolkit"
+
+import { buildSlice } from "@/shared/lib/store"
 
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById"
 import { Article } from "../types/article"
@@ -7,10 +9,10 @@ import { ArticleDetailsSchema } from "../types/ArticleDetailsSchema"
 const initialState: ArticleDetailsSchema = {
   isLoading: false,
   error: undefined,
-  data: undefined
+  data: undefined,
 }
 
-export const articleDetailsSlice = createSlice({
+export const articleDetailsSlice = buildSlice({
   name: "articleDetails",
   initialState,
   reducers: {},
@@ -34,5 +36,8 @@ export const articleDetailsSlice = createSlice({
   },
 })
 
-export const { actions: articleDetailsActions } = articleDetailsSlice
-export const { reducer: articleDetailsReducer } = articleDetailsSlice
+export const {
+  actions: articleDetailsActions,
+  reducer: articleDetailsReducer,
+  useActions: useArticleDetailsActions,
+} = articleDetailsSlice

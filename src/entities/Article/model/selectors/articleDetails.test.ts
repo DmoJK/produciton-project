@@ -4,7 +4,7 @@ import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
-} from "./articleDetails"
+} from "./articleDetailsSelectors"
 
 describe("articleDetails.test", () => {
   test("should return data", () => {
