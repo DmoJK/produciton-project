@@ -2,13 +2,10 @@ import { useTranslation } from "react-i18next"
 
 import { Page } from "@/widgets/Page"
 
-
 const AdminPanelPage = () => {
-  const {t} = useTranslation('admin')
+  const { t } = useTranslation("admin")
 
-  return (
-    <Page>{t("AdminPanelPage")}</Page>
-  )
+  return <Page dataTestId="AdminPanelPage">{t("AdminPanelPage")}</Page>
 }
 
 export default AdminPanelPage
