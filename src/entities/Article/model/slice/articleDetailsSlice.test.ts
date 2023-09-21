@@ -2,7 +2,7 @@ import { articleDetailsReducer } from "./articleDetailsSlice"
 import { ArticleBlockType, ArticleType } from "../consts/ArticleConsts"
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById"
 import { Article } from "../types/article"
-import { ArticleDetailsSchema } from "../types/ArticleDetailsSchema"
+import { ArticleDetailsSchema } from "../types/articleDetailsSchema"
 
 const data: Article = {
   id: "1",

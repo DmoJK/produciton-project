@@ -5,7 +5,7 @@ export {
   getArticleDetailsData,
   useArticleDetailsData,
 } from "./model/selectors/articleDetailsSelectors"
-export type { ArticleDetailsSchema } from "./model/types/ArticleDetailsSchema"
+export type { ArticleDetailsSchema } from "./model/types/articleDetailsSchema"
 export {
   ArticleView,
   ArticleSortField,
