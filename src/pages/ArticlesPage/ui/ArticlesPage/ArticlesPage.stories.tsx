@@ -12,18 +12,6 @@ import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDe
 import ArticlesPage from "./ArticlesPage"
 import { ArticlesPageSchema } from "../../model/types/ArticlesPageSchema"
 
-export default {
-  title: "page/ArticlesPage/ArticlesPage",
-  component: ArticlesPage,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof ArticlesPage>
-
-const Template: ComponentStory<typeof ArticlesPage> = (args) => (
-  <ArticlesPage {...(args as object)} />
-)
-
 const article: Article = {
   id: "1",
   title: "Javascript news",
@@ -64,13 +52,40 @@ const article: Article = {
   ],
 }
 
+export default {
+  title: "page/ArticlesPage/ArticlesPage",
+  component: ArticlesPage,
+  argTypes: {
+    backgroundColor: { control: "color" },
+  },
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}//articles?_expand=user&_page=1&_limit=9&_sort=createdAt&_order=asc&q=`,
+        method: "GET",
+        status: 200,
+        response: [{article}],
+      },
+      {
+        url: `${__API__}//articles?_expand=user&_page=2&_limit=9&_sort=createdAt&_order=asc&q=`,
+        method: "GET",
+        status: 200,
+        response: [],
+      },
+    ],
+  },
+} as ComponentMeta<typeof ArticlesPage>
+
+const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+  <ArticlesPage {...(args as object)} />
+)
+
 const articlesPage: ArticlesPageSchema = {
-  ids: [1],
+  ids: [1, 2, 3],
   entities: {
     1: { ...article, id: "1" },
     2: { ...article, id: "2" },
     3: { ...article, id: "3" },
-    4: { ...article, id: "4" },
   },
   page: 1,
   limit: 4,

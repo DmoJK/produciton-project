@@ -1,21 +1,10 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
 import { ArticleBlockType, ArticleType, Article } from "@/entities/Article"
+import { Comment } from "@/entities/Comment"
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 
 import ArticleDetailsPage from "./ArticleDetailsPage"
-
-export default {
-  title: "page/ArticleDetailsPage",
-  component: ArticleDetailsPage,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof ArticleDetailsPage>
-
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
-  <ArticleDetailsPage {...args} />
-)
 
 const article: Article = {
   id: "1",
@@ -56,6 +45,58 @@ const article: Article = {
     },
   ],
 }
+
+const comment: Comment = {
+  id: "1",
+  user: {
+    id: "1",
+    username: "artem",
+  },
+  text: "Hi, i am comment",
+}
+
+export default {
+  title: "page/ArticleDetailsPage",
+  component: ArticleDetailsPage,
+  argTypes: {
+    backgroundColor: { control: "color" },
+  },
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/articles?_limit=4`,
+        method: "GET",
+        status: 200,
+        response: [
+          { ...article, id: "1" },
+          { ...article, id: "2" },
+          { ...article, id: "3" },
+          { ...article, id: "4" },
+        ],
+      },
+      {
+        url: `${__API__}/comments?_expand=user`,
+        method: "GET",
+        status: 200,
+        response: [
+          { ...comment, id: "1" },
+          { ...comment, id: "2" },
+          { ...comment, id: "3" },
+        ],
+      },
+      {
+        url: `${__API__}/article-ratings`,
+        method: "GET",
+        status: 200,
+        response: [],
+      },
+    ],
+  },
+} as ComponentMeta<typeof ArticleDetailsPage>
+
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+  <ArticleDetailsPage {...args} />
+)
 
 export const Primary = Template.bind({})
 Primary.args = {}

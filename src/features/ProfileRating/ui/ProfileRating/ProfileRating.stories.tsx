@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import withMock from "storybook-addon-mock"
 
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 
@@ -16,7 +15,6 @@ export default {
       user: { authData: { id: "1" } },
       profile: { data: { id: "1" } },
     }),
-    withMock,
   ],
 } as ComponentMeta<typeof ProfileRating>
 

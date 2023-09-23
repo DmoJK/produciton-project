@@ -1,8 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Theme } from "@/shared/const/theme"
-
 import {AppImage} from "./AppImage"
 
 export default {
@@ -18,10 +15,6 @@ const Template: ComponentStory<typeof AppImage> = (args) => (
 )
 
 export const Primary = Template.bind({})
-Primary.args = {}
-
-export const Dark = Template.bind({})
-Dark.args = {}
-Dark.decorators = [
-  ThemeDecorator(Theme.DARK)
-]
+Primary.args = {
+  errorFallback: <h2>no image</h2>
+}

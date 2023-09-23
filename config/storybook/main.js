@@ -1,5 +1,6 @@
 module.exports = {
   stories: ["../../src/**/*.stories.@(js|jsx|ts|tsx)"],
+
   addons: [
     "@storybook/addon-links",
     {
@@ -9,11 +10,20 @@ module.exports = {
       },
     },
     "@storybook/addon-interactions",
-    "storybook-addon-mock/register",
+    "storybook-addon-mock",
     "storybook-addon-themes",
   ],
-  framework: "@storybook/react",
+
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: { fastRefresh: true },
+  },
+
   core: {
     builder: "webpack5",
+  },
+
+  docs: {
+    autodocs: true,
   },
 }
