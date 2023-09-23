@@ -718,6 +718,15 @@
         "MANAGER"
       ],
       "avatar": "https://i.pinimg.com/564x/95/4b/fb/954bfb4770fdd6200ae5fd1772b088e6.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "testuser",
+      "role": [
+        "USER"
+      ],
+      "avatar": ""
     }
   ],
   "profile": [
