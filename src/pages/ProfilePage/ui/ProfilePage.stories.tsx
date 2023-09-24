@@ -2,7 +2,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 
 import { Country } from "@/entities/Country"
 import { Currency } from "@/entities/Currency"
-import AvatarImg from "@/shared/assets/tests/storybook.jpg"
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 
 import ProfilePage from "./ProfilePage"
@@ -29,7 +28,7 @@ Primary.decorators = [
       },
       form: {
         age: 20,
-        avatar: AvatarImg,
+        avatar: "/tests/storybook.jpg",
         city: "Minsk",
         country: Country.Belarus,
         first: "Tima",

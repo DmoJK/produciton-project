@@ -23,6 +23,8 @@ module.exports = {
     builder: "webpack5",
   },
 
+  staticDirs: ['../../src/shared/assets'],
+
   docs: {
     autodocs: true,
   },
