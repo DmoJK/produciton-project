@@ -85,7 +85,7 @@ export default {
         ],
       },
       {
-        url: `${__API__}/article-ratings`,
+        url: `${__API__}/article-ratings?userId=1`,
         method: "GET",
         status: 200,
         response: [],
@@ -106,6 +106,7 @@ Primary.decorators = [
       data: article,
     },
     commentForm: { text: "comment" },
+    user: { authData: { id: "2" } },
   }),
 ]
 export const CanEdit = Template.bind({})
