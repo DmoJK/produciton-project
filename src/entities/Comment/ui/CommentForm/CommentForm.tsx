@@ -53,18 +53,22 @@ export const CommentForm = memo(
     return (
       <DynamicModuleLoader reducers={reducers}>
         <HStack
+          data-testid="CommentForm"
           justify="between"
           max
           className={classNames(cls.CommentForm, {}, [className])}
         >
           <Input
+            data-testid="CommentForm.Input"
             className={cls.input}
             placeholder={t("Введите текст комментария")}
             placeholderInline
             value={text}
             onChange={onCommentTextChange}
           />
-          <Button onClick={onSendHandler}>{t("Отправить")}</Button>
+          <Button data-testid="CommentForm.Button" onClick={onSendHandler}>
+            {t("Отправить")}
+          </Button>
         </HStack>
       </DynamicModuleLoader>
     )

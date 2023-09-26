@@ -23,6 +23,7 @@ export const CommentCard = memo(
     if (isLoading) {
       return (
         <VStack
+          data-testid="CommentCard.Loading"
           max
           gap="8"
           className={classNames(cls.CommentCard, {}, [className, cls.loading])}
@@ -42,6 +43,7 @@ export const CommentCard = memo(
 
     return (
       <VStack
+        data-testid="CommentCard.Content"
         max
         gap="8"
         className={classNames(cls.CommentCard, {}, [className])}

@@ -35,6 +35,7 @@ export const Tabs = memo(
       <div className={classNames(cls.Tabs, {}, [className])}>
         {tabs.map((tab) => (
           <Card
+            data-testid={`Tabs.${tab.value}`}
             className={cls.tab}
             theme={tab.value === value ? CardTheme.PRIMARY : CardTheme.OUTLINED}
             onClick={onClickHandler(tab)}

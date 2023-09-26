@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "first": "first",
+  "lastname": "lastname",
+  "age": 27,
+  "currency": "RUB",
+  "country": "Belarus",
+  "city": "Minsk",
+  "username": "testuser",
+  "avatar": "https://i.pinimg.com/564x/95/4b/fb/954bfb4770fdd6200ae5fd1772b088e6.jpg"
+}

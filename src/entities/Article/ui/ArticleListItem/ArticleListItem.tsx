@@ -20,7 +20,6 @@ import { ArticleBlockType, ArticleView } from "../../model/consts/ArticleConsts"
 import { Article, ArticleTextBlock } from "../../model/types/article"
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent"
 
-
 interface ArticleListItemProps {
   className?: string
   article: Article
@@ -47,6 +46,7 @@ export const ArticleListItem = memo(
 
       return (
         <div
+          data-testid="ArticleListItem"
           className={classNames(cls.ArticleListItem, {}, [
             className,
             cls[view],
@@ -58,7 +58,11 @@ export const ArticleListItem = memo(
               <Text text={article.user.username} className={cls.username} />
               <Text text={article.createdAt} className={cls.date} />
             </div>
-            <Text title={article.title} className={cls.title} />
+            <Text
+              data-testid="ArticleListItem.Title"
+              title={article.title}
+              className={cls.title}
+            />
             {types}
             <AppImage
               src={article.img}
@@ -87,6 +91,7 @@ export const ArticleListItem = memo(
 
     return (
       <AppLink
+        data-testid="ArticleListItem"
         target={target}
         to={routes.ARTICLE_DETAILS(article.id)}
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
@@ -106,7 +111,11 @@ export const ArticleListItem = memo(
             {views}
           </div>
           <div>
-            <Text title={article.title} className={cls.title} />
+            <Text
+              data-testid="ArticleListItem.Title"
+              title={article.title}
+              className={cls.title}
+            />
           </div>
         </Card>
       </AppLink>

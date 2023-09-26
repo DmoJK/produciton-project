@@ -99,6 +99,7 @@ export const ArticlesPageFilters = memo(
         </div>
         <Card className={cls.search}>
           <Input
+            data-testid="ArticlesPageFilters.Search"
             placeholder={t("Поиск")}
             value={search}
             onChange={onChangeSearch}
