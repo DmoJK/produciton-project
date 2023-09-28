@@ -702,6 +702,9 @@
       "id": "1",
       "username": "admin",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "role": [
         "ADMIN"
       ],
@@ -711,6 +714,9 @@
       "id": "2",
       "username": "user",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "role": [
         "USER"
       ],
@@ -720,6 +726,9 @@
       "id": "3",
       "username": "manager",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "role": [
         "MANAGER"
       ],
