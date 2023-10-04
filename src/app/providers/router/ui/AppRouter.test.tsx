@@ -35,7 +35,7 @@ describe("AppRouter.test", () => {
     componentRender(<AppRouter />, {
       route: routes.PROFILE("1"),
       initialState: {
-        user: { _inited: true, authData: {} },
+        user: { _inited: true, authData: {id: "1"} },
       },
     })
 
