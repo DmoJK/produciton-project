@@ -12,7 +12,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
-import { toggleFeatures } from "@/shared/lib/features"
+import { ToggleFeaturesComponents } from "@/shared/lib/features"
 import { VStack } from "@/shared/ui/Stack"
 import { Page } from "@/widgets/Page"
 
@@ -28,13 +28,6 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>()
-  const articleRating = toggleFeatures({
-    name: "isArticleRatingEnabled",
-    // eslint-disable-next-line react/no-unstable-nested-components
-    on: () => <ArticleRating articleId={id} />,
-    // eslint-disable-next-line react/no-unstable-nested-components, i18next/no-literal-string
-    off: () => <div>Rate article coming soon</div>
-  })
 
   return (
     <DynamicModuleLoader reducers={reducers}>
@@ -42,7 +35,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {articleRating}
+          <ToggleFeaturesComponents
+            feature="isArticleRatingEnabled"
+            on={<ArticleRating articleId={id} />}
+            off={<div>Rate article coming soon</div>}
+          />
           <ArticleRecommendationsList />
           <ArticleComments id={id} />
         </VStack>
