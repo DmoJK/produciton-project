@@ -705,6 +705,9 @@
       "features": {
         "isArticleRatingEnabled": true
       },
+      "jsonSettings": {
+        "theme": "app_dark_theme"
+      },
       "role": [
         "ADMIN"
       ],
@@ -716,6 +719,9 @@
       "password": "123",
       "features": {
         "isArticleRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_light_theme"
       },
       "role": [
         "USER"
@@ -729,6 +735,9 @@
       "features": {
         "isArticleRatingEnabled": true
       },
+      "jsonSettings": {
+        "theme": "app_light_theme"
+      },
       "role": [
         "MANAGER"
       ],
@@ -741,6 +750,12 @@
       "role": [
         "USER"
       ],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_light_theme"
+      },
       "avatar": ""
     }
   ],

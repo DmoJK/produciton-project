@@ -16,4 +16,9 @@ export {
   getUserInited,
   useUserAuthData,
   getUserAuthData,
+  useUserJsonSettings,
+  getUserJsonSettings,
 } from "./model/selectors/userSelectors"
+
+export { initAuthData } from "./model/sevices/initAuthData"
+export { saveJsonSettings } from "./model/sevices/saveJsonSettings"
