@@ -8,6 +8,7 @@ import { AvatarDropdown } from "@/features/AvatarDropdown"
 import { NotificationButton } from "@/features/NotificationButton"
 import { routes } from "@/shared/const/router"
 import { classNames } from "@/shared/lib/classNames/classNames"
+import { ToggleFeaturesComponents } from "@/shared/lib/features"
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink"
 import { Button, ButtonTheme } from "@/shared/ui/Button"
 import { HStack } from "@/shared/ui/Stack"
@@ -34,20 +35,33 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(cls.Navbar, {}, [className])}>
-        <Text
-          className={cls.appName}
-          theme={TextTheme.INVERTED}
-          title={t("The ecclesia")}
-        />
-        <AppLink to={routes.ARTICLE_CREATE()} theme={AppLinkTheme.INVERTED}>
-          {t("Создать статью")}
-        </AppLink>
-        <HStack className={cls.links} gap="16">
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
-      </header>
+      <ToggleFeaturesComponents
+        feature="isAppRedesigned"
+        on={
+          <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
+            <HStack className={cls.links} gap="16">
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+        off={
+          <header className={classNames(cls.Navbar, {}, [className])}>
+            <Text
+              className={cls.appName}
+              theme={TextTheme.INVERTED}
+              title={t("The ecclesia")}
+            />
+            <AppLink to={routes.ARTICLE_CREATE()} theme={AppLinkTheme.INVERTED}>
+              {t("Создать статью")}
+            </AppLink>
+            <HStack className={cls.links} gap="16">
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+      />
     )
   }
 

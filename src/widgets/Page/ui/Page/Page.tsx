@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom"
 
 import { StateSchema } from "@/app/providers/StoreProvider"
 import { classNames } from "@/shared/lib/classNames/classNames"
+import { toggleFeatures } from "@/shared/lib/features"
 import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll"
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect"
 import { useThrottle } from "@/shared/lib/hooks/useThrottle"
@@ -56,7 +57,15 @@ export const Page = ({
     <main
       ref={wrapperRef}
       onScroll={onScroll}
-      className={classNames(cls.Page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: "isAppRedesigned",
+          on: () => cls.PageRedesigned,
+          off: () => cls.Page,
+        }),
+        {},
+        [className]
+      )}
       data-testid={dataTestId ?? "Page"}
     >
       {children}
