@@ -724,7 +724,7 @@
         "isAppRedesigned": false
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isArticlesPageWasOpened": true
       },
       "role": [
@@ -761,7 +761,8 @@
         "isAppRedesigned": false
       },
       "jsonSettings": {
-        "theme": "app_light_theme"
+        "theme": "app_light_theme",
+        "isArticlesPageWasOpened": true
       },
       "avatar": ""
     }
