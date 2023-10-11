@@ -1,0 +1,68 @@
+.Button {
+  cursor: pointer;
+  color: var(--text-redesigned);
+  padding: 6px 15px;
+
+  &:hover {
+    color: var(--accent-redesigned);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.clear {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.square {
+  padding: 0;
+}
+
+.square.s {
+  height: var(--font-line-s);
+  width: var(--font-line-s);
+  font: var(--font-s-redesigned);
+}
+
+.square.m {
+  height: var(--font-line-m);
+  width: var(--font-line-m);
+  font: var(--font-m-redesigned);
+}
+
+.square.l {
+  height: var(--font-line-l);
+  width: var(--font-line-l);
+  font: var(--font-l-redesigned);
+}
+
+.square.xl {
+  height: var(--font-line-xl);
+  width: var(--font-line-xl);
+  font: var(--font-xl-redesigned);
+}
+
+.s {
+  font: var(--font-s-redesigned);
+}
+
+.m {
+  font: var(--font-m-redesigned);
+}
+
+.l {
+  font: var(--font-l-redesigned);
+}
+
+.xl {
+  font: var(--font-xl-redesigned);
+}

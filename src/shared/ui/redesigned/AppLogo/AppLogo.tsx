@@ -5,20 +5,16 @@ import { classNames } from "@/shared/lib/classNames/classNames"
 
 import cls from "./AppLogo.module.scss"
 
-import { AppImage } from "../AppImage"
-import { Skeleton } from "../Skeleton"
-import { HStack } from "../Stack"
+import { AppImage } from "../../deprecated/AppImage"
+import { Skeleton } from "../../deprecated/Skeleton"
+import { HStack } from "../../deprecated/Stack"
 
 interface AppLogoProps {
   className?: string
+  size?: number
 }
 
-/**
- * use redesigned ui components
- * @deprecated
- */
-
-export const AppLogo = memo(({ className }: AppLogoProps) => {
+export const AppLogo = memo(({ className, size = 80 }: AppLogoProps) => {
   return (
     <HStack
       max
@@ -29,8 +25,8 @@ export const AppLogo = memo(({ className }: AppLogoProps) => {
       <div className={cls.gradientSmall} />
       <AppImage
         src={LogoIcon}
-        width={80}
-        height={80}
+        width={size}
+        height={size}
         className={cls.appLogo}
         alt=""
         fallback={<Skeleton width={80} height={80} />}
