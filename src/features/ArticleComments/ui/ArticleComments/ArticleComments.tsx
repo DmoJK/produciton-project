@@ -6,8 +6,8 @@ import { useArticleDetailsData } from "@/entities/Article"
 import { CommentForm, CommentList } from "@/entities/Comment"
 import { useUserAuthData } from "@/entities/User"
 import { classNames } from "@/shared/lib/classNames/classNames"
-import { VStack } from "@/shared/ui/Stack"
-import { Text, TextSize, TextTheme } from "@/shared/ui/Text"
+import { VStack } from "@/shared/ui/deprecated/Stack"
+import { Text, TextSize, TextTheme } from "@/shared/ui/deprecated/Text"
 
 import {
   useAddCommentForArticle,

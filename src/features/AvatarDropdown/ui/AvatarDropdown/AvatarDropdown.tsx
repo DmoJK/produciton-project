@@ -12,8 +12,8 @@ import {
 import { routes } from "@/shared/const/router"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch"
-import { Avatar } from "@/shared/ui/Avatar"
-import { Dropdown } from "@/shared/ui/Popups"
+import { Avatar } from "@/shared/ui/deprecated/Avatar"
+import { Dropdown } from "@/shared/ui/deprecated/Popups"
 
 interface AvatarDropdownProps {
   className?: string

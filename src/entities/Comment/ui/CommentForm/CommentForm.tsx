@@ -7,9 +7,9 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
-import { Button } from "@/shared/ui/Button"
-import { Input } from "@/shared/ui/Input"
-import { HStack } from "@/shared/ui/Stack"
+import { Button } from "@/shared/ui/deprecated/Button"
+import { Input } from "@/shared/ui/deprecated/Input"
+import { HStack } from "@/shared/ui/deprecated/Stack"
 
 import cls from "./CommentForm.module.scss"
 

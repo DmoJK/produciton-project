@@ -3,7 +3,7 @@ import { memo } from "react"
 import { useSelector } from "react-redux"
 
 import { ArticleList } from "@/entities/Article"
-import { Text, TextTheme } from "@/shared/ui/Text"
+import { Text, TextTheme } from "@/shared/ui/deprecated/Text"
 
 import {
   useArticlesPageError,
